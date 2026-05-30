@@ -343,7 +343,7 @@ html, body {
 }
 
 /* ── Input ── */
-.input {
+.input, .mx-input {
   padding: 8px 12px;
   font-size: var(--ds-font-base);
   border: 1px solid var(--ds-border);
@@ -355,13 +355,18 @@ html, body {
   width: 100%;
 }
 
-.input:focus {
+.mx-input-lg {
+  padding: 12px 16px;
+  font-size: var(--ds-font-md);
+}
+
+.input:focus, .mx-input:focus {
   outline: none;
   border-color: var(--ds-brand);
   box-shadow: 0 0 0 3px var(--ds-brand-light);
 }
 
-.input::placeholder {
+.input::placeholder, .mx-input::placeholder {
   color: var(--ds-text-muted);
 }
 
@@ -755,6 +760,234 @@ html, body {
   .config-body {
     padding: var(--ds-space-3);
   }
+}
+
+/* ── Login Page ── */
+.dealer-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  padding: var(--ds-space-6);
+}
+
+.dealer-login-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: var(--ds-radius-xl);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: var(--ds-space-5);
+}
+
+.login-logo-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: var(--ds-space-2);
+}
+
+.login-logo h1 {
+  font-size: var(--ds-font-2xl);
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+}
+
+.login-subtitle {
+  color: #94a3b8;
+  font-size: var(--ds-font-md);
+  margin-top: var(--ds-space-1);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1);
+}
+
+.form-group label {
+  font-size: var(--ds-font-sm);
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+/* Dark-themed inputs inside login card */
+.dealer-login-card .mx-input,
+.dealer-login-card .mx-input-lg,
+.admin-login-card .mx-input,
+.admin-login-card .mx-input-lg {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.dealer-login-card .mx-input:focus,
+.admin-login-card .mx-input:focus {
+  border-color: var(--ds-brand);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+}
+
+.dealer-login-card .mx-input::placeholder,
+.admin-login-card .mx-input::placeholder {
+  color: #64748b;
+}
+
+.btn-brand {
+  background: var(--ds-brand);
+  color: var(--ds-brand-text);
+}
+
+.btn-brand:hover {
+  background: var(--ds-brand-hover);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: var(--ds-font-md);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--ds-radius-md);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background 150ms ease;
+  font-family: var(--ds-font-family);
+}
+
+.btn-block:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-msg {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  font-size: var(--ds-font-sm);
+}
+
+.success-msg {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-2) var(--ds-space-3);
+  font-size: var(--ds-font-sm);
+}
+
+.login-footer {
+  margin-top: var(--ds-space-5);
+  text-align: center;
+}
+
+.link-subtle {
+  color: #94a3b8;
+  font-size: var(--ds-font-sm);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.link-subtle:hover {
+  color: #f8fafc;
+  text-decoration: underline;
+}
+
+/* ── Admin Pages ── */
+.admin-layout {
+  min-height: 100vh;
+  background: var(--ds-bg);
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ds-space-3) var(--ds-space-5);
+  background: var(--ds-surface);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.admin-header h1 {
+  font-size: var(--ds-font-xl);
+  font-weight: 700;
+}
+
+.admin-body {
+  padding: var(--ds-space-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: var(--ds-space-6);
+}
+
+.admin-login-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: var(--ds-radius-xl);
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.admin-login-card h1 {
+  font-size: var(--ds-font-2xl);
+  font-weight: 800;
+  color: #f8fafc;
+  text-align: center;
+  margin-bottom: var(--ds-space-5);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--ds-space-4);
+  margin-bottom: var(--ds-space-5);
+}
+
+.kpi-card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-lg);
+  padding: var(--ds-space-4);
+}
+
+.kpi-card .kpi-label {
+  font-size: var(--ds-font-xs);
+  color: var(--ds-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-card .kpi-value {
+  font-size: var(--ds-font-2xl);
+  font-weight: 800;
+  color: var(--ds-text-primary);
+  margin-top: 2px;
 }
 
 /* ── Animations ── */

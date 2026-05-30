@@ -36,7 +36,7 @@ export function newToken() {
 
 export async function setAdminSession() {
   const token = newToken();
-  (await cookies()).set(ADMIN_COOKIE, sign(token), { httpOnly: true, sameSite: "lax", secure: true, path: "/", maxAge: MAX_AGE });
+  (await cookies()).set(ADMIN_COOKIE, sign(token), { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: MAX_AGE });
 }
 
 export async function clearAdminSession() {
@@ -48,7 +48,7 @@ export async function isAdmin() {
 }
 
 export async function setDealerDeviceToken(token: string) {
-  (await cookies()).set(DEALER_COOKIE, sign(token), { httpOnly: true, sameSite: "lax", secure: true, path: "/", maxAge: MAX_AGE });
+  (await cookies()).set(DEALER_COOKIE, sign(token), { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: MAX_AGE });
 }
 
 export async function getDealerDeviceToken() {
