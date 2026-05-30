@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 type Entry = { id: string; pdv_code: string; email: string; active: boolean };
 
@@ -60,6 +61,7 @@ export default function AdminAccess() {
 
   return (
     <div className="admin-layout">
+      <ThemeToggle />
       <header className="admin-header">
         <h1>Accessi PDV</h1>
         <div className="admin-header-actions">

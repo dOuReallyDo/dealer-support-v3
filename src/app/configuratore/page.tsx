@@ -5,6 +5,7 @@ import OperatorSelector from "@/components/OperatorSelector";
 import OfferCard from "@/components/OfferCard";
 import CartSidebar from "@/components/CartSidebar";
 import ComparisonModal from "@/components/ComparisonModal";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { getAllOffers, CATEGORIES, DISCOUNT_RULES } from "@/data/offers";
 
 export default function ConfiguratorePage() {
@@ -38,6 +39,7 @@ export default function ConfiguratorePage() {
 
   return (
     <div className="config-layout">
+      <ThemeToggle />
       {/* Left sidebar */}
       <aside className="config-sidebar">
         <OperatorSelector />

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function AdminMatrix() {
   const [file, setFile] = useState<File | null>(null);
@@ -18,6 +19,7 @@ export default function AdminMatrix() {
 
   return (
     <div className="admin-layout">
+      <ThemeToggle />
       <header className="admin-header">
         <h1>Matrice Offerte</h1>
         <div className="admin-header-actions">

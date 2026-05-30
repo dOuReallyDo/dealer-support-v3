@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({
@@ -23,6 +24,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="admin-layout">
+      <ThemeToggle />
       <header className="admin-header">
         <h1>Admin Dashboard</h1>
         <div className="admin-header-actions">

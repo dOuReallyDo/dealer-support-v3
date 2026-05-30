@@ -10,21 +10,22 @@
   padding: 0;
 }
 
-/* ── CSS Custom Properties (Neutral defaults) ── */
-:root {
-  --ds-bg: #f7f7f7;
-  --ds-surface: #ffffff;
-  --ds-surface-hover: #f5f5f5;
-  --ds-border: #e0e0e0;
-  --ds-border-subtle: #f0f0f0;
+/* ── CSS Custom Properties (Dark Theme — default) ── */
+:root,
+[data-theme="dark"] {
+  --ds-bg: #0f172a;
+  --ds-surface: #1e293b;
+  --ds-surface-hover: #334155;
+  --ds-border: #334155;
+  --ds-border-subtle: #1e293b;
 
-  --ds-text-primary: #1a1a1a;
-  --ds-text-secondary: #555555;
-  --ds-text-muted: #888888;
+  --ds-text-primary: #f8fafc;
+  --ds-text-secondary: #e2e8f0;
+  --ds-text-muted: #94a3b8;
 
   --ds-brand: #ff6b00;
   --ds-brand-hover: #e55e00;
-  --ds-brand-light: #fff5eb;
+  --ds-brand-light: rgba(255,107,0,0.15);
   --ds-brand-text: #ffffff;
 
   --ds-success: #22c55e;
@@ -37,9 +38,9 @@
   --ds-radius-xl: 16px;
   --ds-radius-full: 9999px;
 
-  --ds-shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --ds-shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --ds-shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --ds-shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --ds-shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  --ds-shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
 
   --ds-space-1: 4px;
   --ds-space-2: 8px;
@@ -57,6 +58,42 @@
   --ds-font-xl: 20px;
   --ds-font-2xl: 24px;
   --ds-font-3xl: 28px;
+
+  --ds-input-bg: #0f172a;
+  --ds-input-border: #334155;
+  --ds-input-text: #f8fafc;
+  --ds-input-placeholder: #64748b;
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --ds-bg: #f7f7f7;
+  --ds-surface: #ffffff;
+  --ds-surface-hover: #f5f5f5;
+  --ds-border: #e0e0e0;
+  --ds-border-subtle: #f0f0f0;
+
+  --ds-text-primary: #1a1a2e;
+  --ds-text-secondary: #374151;
+  --ds-text-muted: #6b7280;
+
+  --ds-brand: #e55800;
+  --ds-brand-hover: #cc4e00;
+  --ds-brand-light: rgba(229,88,0,0.08);
+  --ds-brand-text: #ffffff;  /* ALWAYS white on orange! */
+
+  --ds-success: #16a34a;
+  --ds-danger: #dc2626;
+  --ds-warning: #d97706;
+
+  --ds-shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --ds-shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --ds-shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+
+  --ds-input-bg: #ffffff;
+  --ds-input-border: #d1d5db;
+  --ds-input-text: #1a1a2e;
+  --ds-input-placeholder: #9ca3af;
 }
 
 /* ── Operator brand overrides ── */
@@ -998,4 +1035,147 @@ html, body {
 
 .animate-in {
   animation: fadeIn 300ms ease-out;
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 150ms ease;
+  box-shadow: var(--ds-shadow-sm);
+}
+.theme-toggle:hover {
+  background: var(--ds-surface-hover);
+  box-shadow: var(--ds-shadow-md);
+}
+
+/* ═══════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   Core principle: text on orange backgrounds is ALWAYS white.
+   ═══════════════════════════════════════════════════════ */
+
+/* Login card — light theme */
+[data-theme="light"] .admin-login-wrap {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+[data-theme="light"] .admin-login-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+[data-theme="light"] .admin-login-card h1 {
+  color: var(--ds-text-primary);
+}
+[data-theme="light"] .form-group label {
+  color: var(--ds-text-secondary);
+}
+
+/* Inputs — light theme */
+[data-theme="light"] .dealer-login-card input,
+[data-theme="light"] .admin-login-card input,
+[data-theme="light"] .admin-view input,
+[data-theme="light"] .admin-view select {
+  background: var(--ds-input-bg) !important;
+  border-color: var(--ds-input-border) !important;
+  color: var(--ds-input-text) !important;
+}
+[data-theme="light"] input::placeholder {
+  color: var(--ds-input-placeholder) !important;
+}
+
+/* ❗ ORANGE BUTTONS — text is ALWAYS white in BOTH themes ❗ */
+.btn-brand,
+.btn-brand:hover,
+.btn-brand:active,
+.btn-brand:disabled,
+[data-theme="light"] .btn-brand,
+[data-theme="light"] .btn-brand:hover,
+[data-theme="light"] .btn-brand:active,
+[data-theme="light"] .btn-brand:disabled {
+  color: #ffffff !important;
+}
+
+/* ❗ ORANGE BACKGROUND AREAS — text is ALWAYS white ❗ */
+[data-theme="light"] .brand-header,
+[data-theme="light"] .brand-banner,
+[data-theme="light"] .brand-accent-bg,
+[data-theme="light"] .bg-brand,
+[data-theme="light"] .offer-card-brand-header,
+[data-theme="light"] [style*="background: rgb(255, 107, 0)"],
+[data-theme="light"] [style*="background:#ff6b00"],
+[data-theme="light"] [style*="background: #ff6b00"],
+[data-theme="light"] [style*="background: rgb(229, 88, 0)"],
+[data-theme="light"] [style*="background:#e55800"],
+[data-theme="light"] [style*="background: #e55800"] {
+  color: #ffffff !important;
+}
+/* All children inside orange bg also white */
+[data-theme="light"] .brand-header *,
+[data-theme="light"] .brand-banner *,
+[data-theme="light"] .brand-accent-bg *,
+[data-theme="light"] .offer-card-brand-header * {
+  color: #ffffff !important;
+}
+
+/* Error/success messages — light theme */
+[data-theme="light"] .error-msg {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.2);
+  color: #dc2626;
+}
+[data-theme="light"] .success-msg {
+  background: rgba(22, 163, 74, 0.08);
+  border-color: rgba(22, 163, 74, 0.2);
+  color: #16a34a;
+}
+
+/* Links — light theme */
+[data-theme="light"] .link-subtle {
+  color: var(--ds-text-muted);
+}
+[data-theme="light"] .link-subtle:hover {
+  color: var(--ds-text-primary);
+}
+
+/* Admin — light theme */
+[data-theme="light"] .admin-layout {
+  background: var(--ds-bg);
+}
+[data-theme="light"] .admin-header {
+  background: var(--ds-surface);
+  border-bottom-color: var(--ds-border);
+}
+[data-theme="light"] .kpi-card {
+  background: var(--ds-surface);
+  border-color: var(--ds-border);
+}
+
+/* Offer cards — light theme */
+[data-theme="light"] .offer-card,
+[data-theme="light"] .cart-sidebar,
+[data-theme="light"] .comparison-modal {
+  background: var(--ds-surface);
+  border-color: var(--ds-border);
+}
+[data-theme="light"] .offer-card-inner,
+[data-theme="light"] .offer-detail {
+  background: var(--ds-surface-hover);
+}
+
+/* Theme toggle — light mode icon adjustment */
+[data-theme="light"] .theme-toggle {
+  background: #ffffff;
+  border-color: #e0e0e0;
 }

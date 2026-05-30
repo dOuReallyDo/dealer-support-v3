@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import type { Dealer } from "@/types";
 
 export default function DealerHome() {
@@ -46,6 +47,8 @@ export default function DealerHome() {
 
   return (
     <div className="dealer-login-wrap">
+      <ThemeToggle />
+
       <div className="dealer-login-card">
         <div className="login-logo">
           <span className="login-logo-icon">🏪</span>

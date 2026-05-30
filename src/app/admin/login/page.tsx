@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
@@ -25,6 +26,7 @@ export default function AdminLogin() {
 
   return (
     <div className="dealer-login-wrap">
+      <ThemeToggle />
       <div className="dealer-login-card">
         <h1 className="login-title-accent">Admin Backend</h1>
         <p>Configurazione matrici e allowlist dealer.</p>
