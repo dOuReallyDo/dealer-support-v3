@@ -90,6 +90,9 @@ export default function DealerHome() {
         </form>
 
         <div className="login-footer">
+          <p style={{ fontSize: "12px", color: "var(--ds-text-muted)", marginTop: "12px" }}>
+            Demo: <code>demo@windtre.it</code> / <code>001234</code>
+          </p>
           <a href="/admin/login" className="link-subtle">Area admin</a>
         </div>
       </div>
