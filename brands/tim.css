@@ -1,0 +1,1020 @@
+/* ============================================================
+   TIM (Telecom Italia Mobile) — Pixel-Perfect Design System
+   Extracted from https://www.tim.it (v1.2.8 clientlib-base)
+   ============================================================ */
+
+/* ── Font Faces ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* TIM Sans is loaded via preload from CDN:
+   //risorsec.tim.it/…/clientlib-base/resources/font/tim-sans/
+   Weights: Light (300), Medium (500), Heavy (900),
+            LightItalic, MediumItalic, HeavyItalic            */
+
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-Light/TIMSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-LightItalic/TIMSans-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-Medium/TIMSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-MediumItalic/TIMSans-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-Heavy/TIMSans-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TIMSans';
+  src: url('https://risorsec.tim.it/etc.clientlibs/flytoco-areapubblica-aemfe/clientlibs/1.2.8/clientlib-base/resources/font/tim-sans/TIMSans-HeavyItalic/TIMSans-HeavyItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── CSS Custom Properties ───────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --tim-blue-primary:    #122ac2;   /* TIM CTA / links / primary accent */
+  --tim-blue-dark:       #081677;   /* Dark navy (footer, price euros) */
+  --tim-blue-deeper:     #001136;   /* Deepest navy background */
+  --tim-blue-royal:      #0033a1;   /* Logo "TIM" blue */
+  --tim-blue-light:      #0088d9;  /* Light blue accent */
+  --tim-blue-lavender:   #d0d4f3;   /* Tag bg, card border */
+  --tim-blue-pale:       #cce0fc;  /* Pale blue bg */
+
+  /* Red */
+  --tim-red:             #eb0028;   /* Logo "3-bar" / alert / accent */
+  --tim-red-dark:        #ea0026;   /* Darker red variant */
+  --tim-red-light:       #ff5c82;   /* Light red / pink accent */
+
+  /* Green */
+  --tim-green:           #82c85a;   /* Success / eco accent */
+  --tim-green-mint:      #00b677;   /* Mint green accent */
+  --tim-green-teal:      #50e3c2;   /* Teal accent */
+  --tim-green-lime:      #dbf11e;   /* Neon lime / promo highlight */
+
+  /* Neutrals */
+  --tim-white:           #ffffff;
+  --tim-gray-100:        #efefef;   /* Light section bg */
+  --tim-gray-200:        #dbdbdb;   /* Subtle dividers */
+  --tim-gray-300:        #ccc;      /* Medium gray */
+  --tim-gray-400:        #aaa;      /* Placeholder text */
+  --tim-gray-500:        #727272;   /* Secondary text */
+  --tim-gray-600:        #666;      /* Muted text */
+  --tim-gray-700:        #7f7f7f;   /* Gray text */
+  --tim-gray-800:        #333;      /* Body text dark */
+  --tim-gray-900:        #1a1a1a;   /* Near-black text */
+  --tim-black:           #000000;
+  --tim-dark-blue-gray:  #2b333f;   /* Dark card bg variant */
+
+  /* Typography */
+  --tim-font-family:     'TIMSans', 'Roboto', sans-serif;
+  --tim-font-size-xs:    1rem;       /* 10px */
+  --tim-font-size-sm:    1.2rem;     /* 12px */
+  --tim-font-size-base:  1.4rem;     /* 14px */
+  --tim-font-size-md:    1.6rem;     /* 16px */
+  --tim-font-size-lg:    1.8rem;     /* 18px */
+  --tim-font-size-xl:    2rem;       /* 20px */
+  --tim-font-size-2xl:   2.2rem;     /* 22px — paragraph--title */
+  --tim-font-size-3xl:   2.4rem;     /* 24px */
+  --tim-font-size-4xl:   2.8rem;     /* 28px */
+  --tim-font-size-5xl:   3.2rem;     /* 32px */
+  --tim-font-size-6xl:   4rem;       /* 40px */
+
+  --tim-font-weight-light:   300;
+  --tim-font-weight-regular: 400;
+  --tim-font-weight-medium:  500;
+  --tim-font-weight-semibold:600;
+  --tim-font-weight-bold:    700;
+  --tim-font-weight-black:   900;
+
+  --tim-line-height-tight:  1;
+  --tim-line-height-snug:    1.3em;
+  --tim-line-height-normal:   1.5;
+  --tim-line-height-relaxed:  1.6em;
+
+  --tim-letter-spacing-btn:  0.05rem;   /* Button text tracking */
+
+  /* Spacing (rem-based 8px grid) */
+  --tim-space-xxs:  0.4rem;
+  --tim-space-xs:   0.8rem;
+  --tim-space-sm:   1.2rem;
+  --tim-space-md:   1.6rem;
+  --tim-space-lg:   2.4rem;
+  --tim-space-xl:   3.2rem;
+  --tim-space-2xl:  4.8rem;
+
+  /* Border Radius */
+  --tim-radius-none:   0;
+  --tim-radius-xs:     0.4rem;     /* tag */
+  --tim-radius-sm:     7px;
+  --tim-radius-md:     1.4rem;     /* button, card mobile */
+  --tim-radius-lg:     2rem;      /* card desktop */
+  --tim-radius-full:   50%;
+  --tim-radius-pill:   100%;
+
+  /* Shadows / Overlays */
+  --tim-overlay-dark:  rgba(0, 0, 0, 0.4);
+  --tim-overlay-light: rgba(0, 0, 0, 0.2);
+
+  /* Component-specific tokens */
+  --tim-btn-height:        4.8rem;
+  --tim-btn-padding-x:     3.2rem;
+  --tim-btn-border-radius: 1.4rem;
+
+  --tim-card-border:       1px solid var(--tim-blue-lavender);
+  --tim-card-radius:       var(--tim-radius-lg);
+  --tim-card-radius-mobile: var(--tim-radius-lg);
+
+  --tim-price-height-sm:   7.4rem;
+  --tim-price-height-md:   8.1rem;
+  --tim-price-height-lg:   11rem;
+}
+
+/* ── Base / Reset ────────────────────────────────────────── */
+.tim-root,
+.tim-scope {
+  font-family: var(--tim-font-family);
+  font-size: var(--tim-font-size-base);
+  line-height: var(--tim-line-height-normal);
+  color: var(--tim-gray-800);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography Classes ──────────────────────────────────── */
+.tim-h1,
+.tim-paragraph--title {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-bold);
+  font-size: var(--tim-font-size-2xl);    /* 2.2rem */
+  line-height: var(--tim-line-height-snug);
+  color: var(--tim-gray-900);
+}
+
+.tim-h2,
+.tim-paragraph--subtitle {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-bold);
+  font-size: var(--tim-font-size-lg);     /* 1.8rem */
+  line-height: var(--tim-line-height-snug);
+  color: var(--tim-gray-900);
+}
+
+.tim-body,
+.tim-paragraph--body {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-regular);
+  font-size: var(--tim-font-size-base);  /* 1.4rem */
+  line-height: var(--tim-line-height-normal);
+  color: var(--tim-gray-800);
+}
+
+.tim-body-big,
+.tim-paragraph--body-big {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-regular);
+  font-size: var(--tim-font-size-md);     /* 1.6rem */
+  line-height: var(--tim-line-height-normal);
+  color: var(--tim-gray-800);
+}
+
+.tim-body-small,
+.tim-paragraph--body-small {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-regular);
+  font-size: var(--tim-font-size-sm);    /* 1.2rem */
+  line-height: var(--tim-line-height-normal);
+  color: var(--tim-gray-500);
+}
+
+.tim-body-hero,
+.tim-paragraph--body-hero {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-bold);
+  font-size: var(--tim-font-size-3xl);   /* 2.4rem */
+  line-height: var(--tim-line-height-snug);
+  color: var(--tim-gray-900);
+}
+
+/* Utility text colors */
+.tim-c-blue       { color: var(--tim-blue-primary); }
+.tim-c-light-blue { color: var(--tim-blue-light); }
+.tim-c-white      { color: var(--tim-white); }
+.tim-c-black      { color: var(--tim-gray-900); }
+.tim-c-red        { color: var(--tim-red); }
+.tim-c-green      { color: var(--tim-green); }
+.tim-c-lime       { color: var(--tim-green-lime); }
+.tim-c-muted      { color: var(--tim-gray-600); }
+
+.tim-bold {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-medium);
+  font-style: normal;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+
+/* Base button */
+.tim-btn {
+  --btn-border-radius: var(--tim-btn-border-radius);
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: var(--tim-line-height-tight);
+  overflow: hidden;
+  outline: 0;
+  height: var(--tim-btn-height);
+  justify-content: center;
+  padding: 0 var(--tim-btn-padding-x);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.15s;
+  -webkit-user-select: none;
+  user-select: none;
+  width: auto;
+  border-radius: var(--btn-border-radius);
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-semibold);
+  font-style: normal;
+}
+
+.tim-btn__txt {
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-semibold);
+  font-style: normal;
+  font-size: var(--tim-font-size-md);       /* 1.6rem */
+  pointer-events: none;
+  letter-spacing: var(--tim-letter-spacing-btn);
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  z-index: 2;
+  padding: 1.3rem 0 1.1rem;
+}
+
+/* Primary Button (blue bg, white text) */
+.tim-btn--primary {
+  text-transform: uppercase;
+  color: var(--tim-white);
+}
+
+.tim-btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--tim-blue-primary);
+  border-radius: var(--btn-border-radius);
+  z-index: -1;
+  transition: background-color 0.15s;
+}
+
+.tim-btn--primary:active::after {
+  background-color: var(--tim-blue-dark);
+}
+
+.no-touch .tim-btn--primary:hover::after {
+  background-color: var(--tim-blue-dark);
+}
+
+/* Primary Negative (white bg on dark) */
+.tim-btn--primary.tim-btn--negative::after {
+  background-color: var(--tim-white);
+}
+
+.no-touch .tim-btn--primary.tim-btn--negative:hover::after {
+  background-color: var(--tim-gray-100);
+}
+
+.tim-btn--primary.tim-btn--negative {
+  color: var(--tim-blue-primary);
+}
+
+/* Secondary Button (transparent, border) */
+.tim-btn--secondary {
+  text-transform: uppercase;
+  color: var(--tim-blue-primary);
+}
+
+.tim-btn--secondary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--tim-blue-primary);
+  border-radius: var(--btn-border-radius);
+  z-index: -1;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.no-touch .tim-btn--secondary:hover::after {
+  border-color: var(--tim-blue-dark);
+  background-color: rgba(18, 42, 194, 0.05);
+}
+
+/* Secondary Negative (white border on dark) */
+.tim-btn--secondary.tim-btn--negative::after {
+  border-color: var(--tim-white);
+}
+
+.tim-btn--secondary.tim-btn--negative {
+  color: var(--tim-white);
+}
+
+/* Secondary White variant */
+.tim-btn--secondary.tim-btn--white::after {
+  border-color: var(--tim-white);
+  background-color: var(--tim-white);
+}
+
+.tim-btn--secondary.tim-btn--white {
+  color: var(--tim-blue-primary);
+}
+
+/* Special Button (lime/green promo) */
+.tim-btn--special::after {
+  background-color: var(--tim-green-lime);
+  border-radius: var(--btn-border-radius);
+}
+
+.tim-btn--special {
+  color: var(--tim-blue-dark);
+}
+
+/* Special Red Button */
+.tim-btn--special-red::after {
+  background-color: var(--tim-red);
+  border-radius: var(--btn-border-radius);
+}
+
+.tim-btn--special-red {
+  color: var(--tim-white);
+}
+
+/* Special Blue Button */
+.tim-btn--special-blue::after {
+  background-color: var(--tim-blue-primary);
+  border-radius: var(--btn-border-radius);
+}
+
+.tim-btn--special-blue {
+  color: var(--tim-white);
+}
+
+/* Tertiary / Ghost Button */
+.tim-btn--tertiary {
+  color: var(--tim-blue-primary);
+  background: transparent;
+}
+
+/* Disabled Button */
+.tim-btn:disabled,
+.tim-btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Cards / Tiles ───────────────────────────────────────── */
+
+/* Base card (tile) */
+.tim-card {
+  --card-border-radius: var(--tim-radius-lg);
+  --card-border-radius-mobile: var(--tim-radius-lg);
+  box-sizing: border-box;
+  border: var(--tim-card-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--card-border-radius-mobile);
+  background: var(--tim-white);
+}
+
+@media (min-width: 48em) {
+  .tim-card {
+    border-radius: var(--card-border-radius);
+  }
+}
+
+/* Card — Light theme */
+.tim-card--light {
+  background: var(--tim-white);
+  color: var(--tim-black);
+}
+
+/* Card — Dark theme (gradient) */
+.tim-card--dark {
+  background: var(--tim-blue-dark);
+  background: linear-gradient(225deg, #08078a 0%, #061ec5 100%);
+  color: var(--tim-white);
+}
+
+/* Card body */
+.tim-card__body {
+  text-align: left;
+  box-sizing: border-box;
+  padding: var(--tim-space-lg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card tags */
+.tim-card__tags {
+  margin-bottom: var(--tim-space-xs);
+}
+
+/* Card title */
+.tim-card__title {
+  margin-bottom: var(--tim-space-xs);
+}
+
+/* Card description */
+.tim-card__description {
+  margin-bottom: var(--tim-space-md);
+}
+
+/* Card price area */
+.tim-card__price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: var(--tim-space-md);
+}
+
+/* Card CTA button container */
+.tim-card__button {
+  float: left;
+  max-width: 100%;
+  margin-top: var(--tim-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card features */
+.tim-card__features {
+  margin-bottom: var(--tim-space-xl);
+}
+
+/* ── Tags ────────────────────────────────────────────────── */
+.tim-tag {
+  --tag-border-radius: var(--tim-radius-xs);
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-bold);
+  font-style: normal;
+  align-items: center;
+  background: var(--tim-blue-lavender);
+  color: var(--tim-black);
+  display: inline-flex;
+  font-size: var(--tim-font-size-xs);
+  line-height: var(--tim-line-height-tight);
+  margin-right: 0.3rem;
+  padding: 0.4rem 0.7rem 0.3rem;
+  text-transform: uppercase;
+  border-radius: var(--tag-border-radius);
+}
+
+/* ── Price Component ─────────────────────────────────────── */
+.tim-price {
+  font-size: var(--tim-font-size-sm);
+  margin-bottom: var(--tim-space-md);
+  color: var(--tim-white);
+}
+
+.tim-card--light .tim-price {
+  color: var(--tim-gray-800);
+}
+
+/* Price sizes */
+.tim-price--small  { height: var(--tim-price-height-sm); }
+.tim-price--medium { height: var(--tim-price-height-md); }
+.tim-price--large  { height: var(--tim-price-height-lg); }
+
+/* Price top (label / recurrences) */
+.tim-price__top {
+  color: var(--tim-blue-dark);
+  font-size: var(--tim-font-size-md);
+}
+
+.tim-card--dark .tim-price__top {
+  color: var(--tim-white);
+}
+
+/* Price center (the big numbers) */
+.tim-price__center {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+/* Price cents / decimals */
+.tim-price__cents {
+  align-items: flex-end;
+  flex-direction: row;
+  font-size: var(--tim-font-size-base);
+  line-height: normal;
+}
+
+/* Price old/strikethrough */
+.tim-price__oldprice {
+  align-self: flex-end;
+  font-weight: var(--tim-font-weight-medium);
+  margin: 0 4px 2px 0;
+}
+
+.tim-price__strike {
+  text-decoration: line-through;
+}
+
+/* ── Features ────────────────────────────────────────────── */
+.tim-feature {
+  align-content: center;
+  display: inline-flex;
+  gap: 12px 0;
+  position: relative;
+}
+
+/* ── Offer Card (Composite) ──────────────────────────────── */
+/*
+  Structure extracted from /offerte/mobile and /offerte/fisso:
+  <article class="tim-offer-card tim-offer-card--light">
+    <div class="tim-offer-card__body">
+      <div class="tim-offer-card__body-top">
+        <div class="tim-offer-card__tags">
+          <span class="tim-tag">PROMO</span>
+        </div>
+        <div class="tim-offer-card__title">
+          <h3 class="tim-paragraph--title">TIM Super Fibra</h3>
+        </div>
+        <div class="tim-offer-card__description">
+          <p class="tim-paragraph--body">Descrizione offerta…</p>
+        </div>
+        <div class="tim-offer-card__features">…</div>
+      </div>
+      <div class="tim-offer-card__body-bottom">
+        <div class="tim-offer-card__price">
+          <div class="tim-price tim-price--small tim-price--left-aligned">
+            <div class="tim-price__top">…</div>
+            <div class="tim-price__center">€9,99/mese</div>
+            <div class="tim-price__cents">…</div>
+            <div class="tim-price__bottom">…</div>
+          </div>
+        </div>
+        <div class="tim-offer-card__button">
+          <a class="tim-btn tim-btn--primary">Scopri di più</a>
+        </div>
+        <ul class="tim-offer-card__details">…</ul>
+      </div>
+    </div>
+  </article>
+*/
+
+.tim-offer-card {
+  --card-border-radius: var(--tim-radius-lg);
+  --card-border-radius-mobile: var(--tim-radius-lg);
+  box-sizing: border-box;
+  border: var(--tim-card-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--card-border-radius-mobile);
+  background: var(--tim-white);
+  color: var(--tim-black);
+}
+
+@media (min-width: 48em) {
+  .tim-offer-card {
+    border-radius: var(--card-border-radius);
+  }
+}
+
+.tim-offer-card--light {
+  background: var(--tim-white);
+  color: var(--tim-black);
+}
+
+.tim-offer-card--dark {
+  background: linear-gradient(225deg, #08078a 0%, #061ec5 100%);
+  color: var(--tim-white);
+}
+
+/* Highlighted variant */
+.tim-offer-card--highlighted {
+  border-color: var(--tim-blue-primary);
+  box-shadow: 0 0 0 2px var(--tim-blue-primary);
+}
+
+.tim-offer-card__body {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 2.8rem var(--tim-space-md) var(--tim-space-md);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tim-offer-card__body-top {
+  flex: 1 1 auto;
+}
+
+.tim-offer-card__body-bottom {
+  flex-shrink: 0;
+}
+
+.tim-offer-card__tags {
+  margin-bottom: var(--tim-space-xs);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tim-offer-card__title {
+  margin-bottom: var(--tim-space-xs);
+}
+
+.tim-offer-card__title .tim-paragraph--title,
+.tim-offer-card__title .tim-h1 {
+  padding-bottom: 0;
+}
+
+.tim-offer-card__description {
+  margin-bottom: var(--tim-space-md);
+}
+
+.tim-offer-card__features {
+  margin-bottom: var(--tim-space-xl);
+}
+
+.tim-offer-card__price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: var(--tim-space-md);
+}
+
+.tim-offer-card__button {
+  margin-top: var(--tim-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tim-offer-card__details {
+  display: flex;
+  justify-content: center;
+  gap: var(--tim-space-lg);
+  margin-top: var(--tim-space-md);
+  list-style: none;
+  padding: 0;
+}
+
+/* ── Offer Cards Grid (subhome section) ──────────────────── */
+.tim-offers-section {
+  background: var(--tim-white);
+  text-align: center;
+  padding: var(--tim-space-lg);
+}
+
+.tim-offers-section__header {
+  margin-bottom: var(--tim-space-lg);
+}
+
+.tim-offers-section__main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--tim-space-md);
+}
+
+/* Mobile single column */
+@media (max-width: 47.99em) {
+  .tim-offer-card {
+    flex-basis: 100%;
+    margin-bottom: var(--tim-space-md);
+  }
+}
+
+/* Tablet 2-column */
+@media (min-width: 48em) and (max-width: 79.99em) {
+  .tim-offers-section__main {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tim-offer-card {
+    flex-basis: calc(50% - 0.8rem);
+  }
+}
+
+/* Desktop 3-column */
+@media (min-width: 80em) {
+  .tim-offers-section__main {
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tim-offer-card {
+    flex-basis: calc(33.333% - 1.067rem);
+  }
+}
+
+/* ── Form Controls ───────────────────────────────────────── */
+.tim-input {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--tim-space-md);
+  font-size: var(--tim-font-size-base);
+}
+
+.tim-input__field {
+  font-family: var(--tim-font-family);
+  font-size: var(--tim-font-size-base);
+  line-height: var(--tim-line-height-normal);
+  color: var(--tim-gray-800);
+  border: 1px solid var(--tim-gray-200);
+  border-radius: var(--tim-radius-sm);
+  padding: 1rem 1.2rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--tim-white);
+  transition: border-color 0.15s;
+}
+
+.tim-input__field:focus {
+  outline: none;
+  border-color: var(--tim-blue-primary);
+  box-shadow: 0 0 0 2px rgba(18, 42, 194, 0.15);
+}
+
+.tim-input__field::placeholder {
+  color: var(--tim-gray-400);
+}
+
+.tim-input__field:disabled {
+  background-color: var(--tim-gray-100);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Select / Choices.js styling */
+.tim-select {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--tim-space-md);
+  font-size: var(--tim-font-size-base);
+}
+
+.tim-select__inner {
+  font-family: var(--tim-font-family);
+  border: 1px solid var(--tim-gray-200);
+  border-radius: var(--tim-radius-sm);
+  padding: 0.75rem 1.2rem;
+  min-height: 4.4rem;
+  background-color: var(--tim-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox / Radio */
+.tim-checkbox,
+.tim-radio {
+  display: flex;
+  align-items: center;
+  gap: var(--tim-space-xs);
+  cursor: pointer;
+  font-family: var(--tim-font-family);
+  font-size: var(--tim-font-size-base);
+}
+
+.tim-checkbox__box,
+.tim-radio__circle {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--tim-blue-primary);
+  border-radius: var(--tim-radius-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.15s;
+}
+
+.tim-radio__circle {
+  border-radius: var(--tim-radius-full);
+}
+
+.tim-checkbox__input:checked + .tim-checkbox__box,
+.tim-radio__input:checked + .tim-radio__circle {
+  background-color: var(--tim-blue-primary);
+  border-color: var(--tim-blue-primary);
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.tim-header {
+  background-color: var(--tim-white);
+  position: relative;
+  z-index: 100;
+}
+
+.tim-header__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--tim-space-xl);
+  height: 6rem;
+}
+
+.tim-header__logo img {
+  height: 24px;
+  width: 88px;
+}
+
+/* ── Pre-header (Gruppo TIM nav) ─────────────────────────── */
+.tim-pre-header {
+  background: var(--tim-blue-dark);
+  color: var(--tim-white);
+  font-size: var(--tim-font-size-xs);
+  padding: var(--tim-space-xs) var(--tim-space-xl);
+  display: flex;
+  align-items: center;
+}
+
+.tim-pre-header__link {
+  color: var(--tim-white);
+  text-decoration: none;
+  font-family: var(--tim-font-family);
+  font-weight: var(--tim-font-weight-medium);
+  font-size: var(--tim-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tim-pre-header__link--active {
+  border-bottom: 2px solid var(--tim-white);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.tim-footer {
+  background-color: var(--tim-blue-dark);
+  color: var(--tim-white);
+  min-height: 50px;
+}
+
+/* ── Breadcrumbs ─────────────────────────────────────────── */
+.tim-breadcrumb {
+  font-family: var(--tim-font-family);
+  font-size: var(--tim-font-size-sm);
+  color: var(--tim-gray-600);
+  padding: var(--tim-space-md) var(--tim-space-xl);
+}
+
+.tim-breadcrumb a {
+  color: var(--tim-blue-primary);
+  text-decoration: none;
+}
+
+.tim-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.tim-breadcrumb__separator {
+  margin: 0 var(--tim-space-xxs);
+  color: var(--tim-gray-400);
+}
+
+/* ── Promo / Highlight Banner ────────────────────────────── */
+.tim-promo-banner {
+  background: linear-gradient(225deg, #08078a 0%, #061ec5 100%);
+  color: var(--tim-white);
+  padding: var(--tim-space-xl) var(--tim-space-lg);
+  border-radius: var(--tim-radius-lg);
+  text-align: center;
+}
+
+.tim-promo-banner__label {
+  background: var(--tim-green-lime);
+  color: var(--tim-blue-dark);
+  font-weight: var(--tim-font-weight-bold);
+  font-size: var(--tim-font-size-xs);
+  text-transform: uppercase;
+  padding: var(--tim-space-xxs) var(--tim-space-xs);
+  border-radius: var(--tim-radius-xs);
+  display: inline-block;
+  margin-bottom: var(--tim-space-xs);
+}
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.tim-hidden     { display: none !important; }
+.tim-text-center { text-align: center; }
+.tim-text-left   { text-align: left; }
+.tim-text-right  { text-align: right; }
+.tim-uppercase   { text-transform: uppercase; }
+.tim-strikethrough { text-decoration: line-through; }
+.tim-no-wrap    { white-space: nowrap; }
+.tim-ellipsis   { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Spacing utilities */
+.tim-mt-xxs  { margin-top: var(--tim-space-xxs) !important; }
+.tim-mt-xs   { margin-top: var(--tim-space-xs) !important; }
+.tim-mt-sm   { margin-top: var(--tim-space-sm) !important; }
+.tim-mt-md   { margin-top: var(--tim-space-md) !important; }
+.tim-mt-lg   { margin-top: var(--tim-space-lg) !important; }
+.tim-mt-xl   { margin-top: var(--tim-space-xl) !important; }
+.tim-mb-xxs  { margin-bottom: var(--tim-space-xxs) !important; }
+.tim-mb-xs   { margin-bottom: var(--tim-space-xs) !important; }
+.tim-mb-sm   { margin-bottom: var(--tim-space-sm) !important; }
+.tim-mb-md   { margin-bottom: var(--tim-space-md) !important; }
+.tim-mb-lg   { margin-bottom: var(--tim-space-lg) !important; }
+.tim-mb-xl   { margin-bottom: var(--tim-space-xl) !important; }
+
+/* Background utilities */
+.tim-bg-white       { background-color: var(--tim-white) !important; }
+.tim-bg-gray        { background-color: var(--tim-gray-100) !important; }
+.tim-bg-blue        { background-color: var(--tim-blue-primary) !important; }
+.tim-bg-blue-dark   { background-color: var(--tim-blue-dark) !important; }
+.tim-bg-blue-deep   { background-color: var(--tim-blue-deeper) !important; }
+.tim-bg-blue-pale   { background-color: var(--tim-blue-pale) !important; }
+.tim-bg-lavender    { background-color: var(--tim-blue-lavender) !important; }
+
+/* ── Responsive Breakpoints ──────────────────────────────── */
+/*
+  Mobile:  < 768px  (47.99em)
+  Tablet:  768–1279px (48em – 79.99em)
+  Desktop: ≥ 1280px (80em)
+  Wide:    ≥ 1100px (68.75em)
+  Wider:   ≥ 1300px (81.25em)
+*/
+
+@media (max-width: 47.99em) {
+  .tim-hidden-mobile { display: none !important; }
+
+  .tim-btn {
+    padding: 0 2.4rem;
+    min-width: auto;
+  }
+
+  .tim-btn__txt {
+    font-size: var(--tim-font-size-base);
+    line-height: var(--tim-font-size-md);
+    font-weight: var(--tim-font-weight-bold);
+  }
+
+  .tim-offer-card__body {
+    padding: var(--tim-space-md);
+  }
+}
+
+@media (min-width: 48em) and (max-width: 79.99em) {
+  .tim-hidden-tablet { display: none !important; }
+}
+
+@media (min-width: 80em) {
+  .tim-hidden-desktop { display: none !important; }
+}

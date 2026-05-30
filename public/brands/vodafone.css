@@ -1,0 +1,719 @@
+/* ============================================================
+   VODAFONE DESIGN SYSTEM — v1.0
+   Extracted from vodafone.it homepage + /offerte-cellulari/
+   CSS prefix: --voda-* / .voda-*
+   ============================================================ */
+
+/* ── FONT FACE DECLARATIONS ── */
+@font-face {
+  font-family: 'Vodafone';
+  font-weight: 300;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/VodafoneLt-Regular.50e90eca.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vodafone';
+  font-weight: 400;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/VodafoneRg-Regular.1208ef49.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vodafone';
+  font-weight: 700;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/VodafoneRg-Bold.368e49c5.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vodafone';
+  font-weight: 800;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/VodafoneExB-Regular.7362f3f2.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'VodafoneIsRg';
+  font-weight: 400;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/Instrument-sans-Regular.d485ddcf.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'VodafoneIsRgB';
+  font-weight: 400;
+  font-display: block;
+  src: url('https://www.vodafone.it/_next/static/media/Instrument-sans-Bold.f8fa82bf.woff2') format('woff2');
+}
+
+/* ── CSS CUSTOM PROPERTIES (DESIGN TOKENS) ── */
+:root {
+  /* Brand Colors */
+  --voda-red:          #e60000;
+  --voda-red-dark:     #a10000;
+  --voda-red-light:    #ff3333;
+  --voda-black:        #262626;
+  --voda-dark-gray:    #4a4a4a;
+  --voda-mid-gray:     #595959;
+  --voda-gray:         #999999;
+  --voda-light-gray:   #cccccc;
+  --voda-pale-gray:    #f4f4f4;
+  --voda-off-white:    #f5f5f5;
+  --voda-white:        #ffffff;
+
+  /* Secondary / Accent */
+  --voda-green:         #00a651;
+  --voda-blue:          #007aff;
+  --voda-yellow:        #ffd400;
+
+  /* Typography */
+  --voda-font-primary: 'Vodafone', -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif;
+  --voda-font-mono: Menlo, Consolas, 'Roboto Mono', 'Ubuntu Monospace', 'Noto Mono', monospace;
+
+  /* Font Sizes (mobile-first) */
+  --voda-text-xs:    .75rem;     /* 12px — footnote2 */
+  --voda-text-sm:    .875rem;    /* 14px — body3 / footnote1 */
+  --voda-text-base:  1rem;       /* 16px — body2 / button1 */
+  --voda-text-md:    1.125rem;   /* 18px — body1 */
+  --voda-text-lg:    1.25rem;    /* 20px — h6 */
+  --voda-text-xl:    1.5rem;     /* 24px — h5 */
+  --voda-text-2xl:   1.75rem;    /* 28px — h4 */
+  --voda-text-3xl:   2rem;       /* 32px — h3 */
+  --voda-text-4xl:   2.25rem;    /* 36px — h2 */
+  --voda-text-5xl:   2.625rem;   /* 42px — h1 */
+
+  /* Font Sizes (desktop ≥64rem) */
+  --voda-text-3xl-d: 2.75rem;   /* 44px — h3 */
+  --voda-text-4xl-d: 3.25rem;   /* 52px — h2 */
+  --voda-text-5xl-d: 4.375rem;  /* 70px — h1 */
+
+  /* Font Weights */
+  --voda-weight-light:      300;
+  --voda-weight-regular:    400;
+  --voda-weight-bold:       700;
+  --voda-weight-extrabold:  800;
+
+  /* Line Heights */
+  --voda-lh-tight:   1.1;
+  --voda-lh-snug:    1.15;
+  --voda-lh-normal:  1.2;
+  --voda-lh-relaxed: 1.25;
+  --voda-lh-loose:   1.3;
+  --voda-lh-wide:    1.35;
+  --voda-lh-body1:   1.35;
+  --voda-lh-body2:   1.4;
+  --voda-lh-base:    1.5;
+
+  /* Spacing */
+  --voda-space-xs:  .25rem;
+  --voda-space-sm:  .5rem;
+  --voda-space-md:  1rem;
+  --voda-space-lg:  1.5rem;
+  --voda-space-xl:  2rem;
+  --voda-space-2xl: 3rem;
+  --voda-space-3xl: 4rem;
+
+  /* Border Radius */
+  --voda-radius-sm:  4px;
+  --voda-radius-md:  8px;
+  --voda-radius-lg:  12px;
+  --voda-radius-xl:  20px;
+  --voda-radius-full: 9999px;
+
+  /* Shadows */
+  --voda-shadow-sm:  0 1px 3px rgba(0,0,0,0.1);
+  --voda-shadow-md:  0 4px 12px rgba(0,0,0,0.1);
+  --voda-shadow-lg:  0 8px 24px rgba(0,0,0,0.12);
+
+  /* Breakpoints (for reference) */
+  --voda-bp-sm:  30rem;   /* 480px */
+  --voda-bp-md:  47.93rem;/* 767px */
+  --voda-bp-lg:  64rem;   /* 1024px */
+}
+
+/* ── BASE RESET ── */
+.voda-root *,
+.voda-root *::before,
+.voda-root *::after {
+  box-sizing: border-box;
+}
+.voda-root {
+  color: var(--voda-black);
+  font-family: var(--voda-font-primary);
+  font-weight: var(--voda-weight-regular);
+  line-height: var(--voda-lh-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── TYPOGRAPHY ── */
+.voda-h1 {
+  font-size: var(--voda-text-5xl);
+  font-weight: var(--voda-weight-extrabold);
+  line-height: var(--voda-lh-snug);
+}
+.voda-h2 {
+  font-size: var(--voda-text-4xl);
+  font-weight: var(--voda-weight-bold);
+  line-height: var(--voda-lh-normal);
+}
+.voda-h3 {
+  font-size: var(--voda-text-3xl);
+  font-weight: var(--voda-weight-bold);
+  line-height: var(--voda-lh-relaxed);
+}
+.voda-h4 {
+  font-size: var(--voda-text-2xl);
+  font-weight: var(--voda-weight-bold);
+  line-height: var(--voda-lh-loose);
+}
+.voda-h5 {
+  font-size: var(--voda-text-xl);
+  font-weight: var(--voda-weight-bold);
+  line-height: var(--voda-lh-wide);
+}
+.voda-h6 {
+  font-size: var(--voda-text-lg);
+  font-weight: var(--voda-weight-bold);
+  line-height: 1.4;
+}
+.voda-body1 {
+  font-size: var(--voda-text-md);
+  line-height: var(--voda-lh-body1);
+}
+.voda-body2 {
+  font-size: var(--voda-text-base);
+  line-height: var(--voda-lh-body2);
+}
+.voda-body3 {
+  font-size: var(--voda-text-sm);
+  line-height: 1.3;
+}
+.voda-footnote1 {
+  font-size: var(--voda-text-sm);
+  line-height: 1.3;
+}
+.voda-footnote2 {
+  font-size: var(--voda-text-xs);
+  line-height: 1.35;
+}
+.voda-tag {
+  font-size: var(--voda-text-xs);
+  font-weight: var(--voda-weight-bold);
+  line-height: 1;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+/* Desktop overrides */
+@media (min-width: 64rem) {
+  .voda-h1 { font-size: var(--voda-text-5xl-d); line-height: var(--voda-lh-tight); }
+  .voda-h2 { font-size: var(--voda-text-4xl-d); line-height: var(--voda-lh-relaxed); }
+  .voda-h3 { font-size: var(--voda-text-3xl-d); line-height: var(--voda-lh-normal); }
+  .voda-h4 { font-size: 2.25rem; line-height: var(--voda-lh-loose); }
+  .voda-h5 { font-size: 1.75rem; line-height: var(--voda-lh-loose); }
+  .voda-h6 { font-size: 1.375rem; line-height: 1.45; }
+}
+
+/* ── LINKS ── */
+.voda-link {
+  text-decoration: underline;
+  color: var(--voda-black);
+  transition: color 0.2s ease;
+}
+.voda-link:hover {
+  color: var(--voda-red);
+}
+
+/* ── BUTTONS ── */
+.voda-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--voda-font-primary);
+  font-weight: var(--voda-weight-regular);
+  font-size: var(--voda-text-base);
+  line-height: 1;
+  padding: .75rem 1.5rem;
+  border-radius: var(--voda-radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.voda-btn:focus-visible {
+  outline: 2px solid var(--voda-black);
+  outline-offset: 2px;
+}
+
+/* Primary Red Button */
+.voda-btn--primary {
+  background-color: var(--voda-red);
+  color: var(--voda-white);
+  border-color: var(--voda-red);
+}
+.voda-btn--primary:hover {
+  background-color: var(--voda-red-dark);
+  border-color: var(--voda-red-dark);
+}
+
+/* Secondary White Button */
+.voda-btn--secondary {
+  background-color: var(--voda-white);
+  color: var(--voda-red);
+  border-color: var(--voda-red);
+}
+.voda-btn--secondary:hover {
+  background-color: var(--voda-red);
+  color: var(--voda-white);
+}
+
+/* Ghost/Outline Button */
+.voda-btn--ghost {
+  background-color: transparent;
+  color: var(--voda-white);
+  border-color: var(--voda-white);
+}
+.voda-btn--ghost:hover {
+  background-color: var(--voda-white);
+  color: var(--voda-red);
+}
+
+/* Dark Button */
+.voda-btn--dark {
+  background-color: var(--voda-black);
+  color: var(--voda-white);
+  border-color: var(--voda-black);
+}
+.voda-btn--dark:hover {
+  background-color: var(--voda-dark-gray);
+}
+
+/* Button sizes */
+.voda-btn--sm {
+  font-size: var(--voda-text-sm);
+  padding: .5rem 1rem;
+}
+.voda-btn--lg {
+  font-size: var(--voda-text-md);
+  padding: 1rem 2rem;
+}
+
+/* ── CARDS / PANELS ── */
+.voda-card {
+  background: var(--voda-white);
+  border-radius: var(--voda-radius-xl);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.voda-card:hover {
+  box-shadow: var(--voda-shadow-lg);
+  transform: translateY(-2px);
+}
+.voda-card--flat {
+  box-shadow: none;
+}
+.voda-card--red {
+  background: var(--voda-red);
+  color: var(--voda-white);
+}
+.voda-card--dark {
+  background: var(--voda-black);
+  color: var(--voda-white);
+}
+.voda-card__header {
+  padding: 1.5rem 2rem 0;
+}
+.voda-card__body {
+  padding: 1.5rem 2rem;
+}
+.voda-card__footer {
+  padding: 0 2rem 1.5rem;
+}
+
+/* ── OFFER CARD STRUCTURE ── */
+.voda-offer-card {
+  background: var(--voda-white);
+  border-radius: var(--voda-radius-xl);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.voda-offer-card--dark {
+  background: var(--voda-black);
+  color: var(--voda-white);
+}
+.voda-offer-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--voda-yellow);
+  color: var(--voda-black);
+  font-size: var(--voda-text-xs);
+  font-weight: var(--voda-weight-bold);
+  padding: .25rem .75rem;
+  border-radius: var(--voda-radius-full);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+.voda-offer-card__title {
+  font-family: var(--voda-font-primary);
+  font-size: var(--voda-text-xl);
+  font-weight: var(--voda-weight-extrabold);
+  line-height: var(--voda-lh-normal);
+}
+.voda-offer-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: .25rem;
+  margin: .5rem 0;
+}
+.voda-offer-card__price-amount {
+  font-family: var(--voda-font-primary);
+  font-size: 3rem;
+  font-weight: var(--voda-weight-extrabold);
+  line-height: 1;
+  color: var(--voda-red);
+}
+.voda-offer-card__price-currency {
+  font-size: var(--voda-text-xl);
+  font-weight: var(--voda-weight-bold);
+  color: var(--voda-red);
+}
+.voda-offer-card__price-period {
+  font-size: var(--voda-text-base);
+  color: var(--voda-mid-gray);
+}
+.voda-offer-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.voda-offer-card__features li {
+  font-size: var(--voda-text-sm);
+  line-height: 1.4;
+  padding: .25rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+.voda-offer-card__features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--voda-green);
+  font-weight: bold;
+}
+.voda-offer-card__cta {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+.voda-offer-card__cta .voda-btn {
+  width: 100%;
+}
+.voda-offer-card__legal {
+  font-size: var(--voda-text-xs);
+  color: var(--voda-gray);
+  line-height: 1.35;
+}
+
+/* ── FORM CONTROLS ── */
+.voda-input {
+  font-family: var(--voda-font-primary);
+  font-size: var(--voda-text-base);
+  font-weight: var(--voda-weight-regular);
+  color: var(--voda-black);
+  background-color: var(--voda-off-white);
+  border: none;
+  border-radius: 0;
+  padding: .75rem 1rem;
+  width: 100%;
+  caret-color: var(--voda-red);
+  transition: border-color 0.2s ease;
+}
+.voda-input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--voda-red);
+  background-color: var(--voda-white);
+}
+.voda-input::placeholder {
+  color: var(--voda-gray);
+  opacity: .54;
+}
+.voda-input--outline {
+  background: transparent;
+  border: 1px solid var(--voda-light-gray);
+  border-radius: var(--voda-radius-sm);
+  padding: .875rem 1rem;
+}
+.voda-input--outline:focus {
+  border-color: var(--voda-red);
+  box-shadow: 0 0 0 1px var(--voda-red);
+}
+
+.voda-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+.voda-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--voda-red);
+  cursor: pointer;
+}
+
+/* ── HEADER / NAV ── */
+.voda-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--voda-white);
+  height: 3.875rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+@media (min-width: 64rem) {
+  .voda-header {
+    height: 5.75rem;
+    padding: 0 2.5rem;
+  }
+}
+.voda-header__logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.voda-header__logo svg,
+.voda-header__logo img {
+  height: 2rem;
+  width: auto;
+}
+.voda-header__nav {
+  display: none;
+  margin-left: auto;
+}
+@media (min-width: 64rem) {
+  .voda-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.voda-header__nav a {
+  color: var(--voda-black);
+  text-decoration: none;
+  font-size: var(--voda-text-base);
+  font-weight: var(--voda-weight-regular);
+  transition: color 0.2s ease;
+}
+.voda-header__nav a:hover {
+  color: var(--voda-red);
+}
+.voda-header__nav a.active {
+  color: var(--voda-red);
+  font-weight: var(--voda-weight-bold);
+}
+
+/* ── FOOTER ── */
+.voda-footer {
+  background: var(--voda-black);
+  color: var(--voda-white);
+  padding: 3rem 2rem 2rem;
+}
+.voda-footer a {
+  color: var(--voda-white);
+  text-decoration: none;
+  font-size: var(--voda-text-sm);
+  transition: color 0.2s;
+}
+.voda-footer a:hover {
+  color: var(--voda-red);
+}
+.voda-footer__links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.voda-footer__link-group h4 {
+  font-size: var(--voda-text-base);
+  font-weight: var(--voda-weight-bold);
+  margin-bottom: 1rem;
+}
+.voda-footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: var(--voda-text-xs);
+  color: var(--voda-gray);
+  text-align: center;
+}
+
+/* ── SEPARATOR / HR ── */
+.voda-divider {
+  border: none;
+  border-top: 1px solid var(--voda-pale-gray);
+  margin: 2rem 0;
+}
+
+/* ── TAG / CHIP ── */
+.voda-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--voda-text-xs);
+  font-weight: var(--voda-weight-bold);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: .25rem .75rem;
+  border-radius: var(--voda-radius-full);
+  background: var(--voda-pale-gray);
+  color: var(--voda-black);
+}
+.voda-tag--red {
+  background: var(--voda-red);
+  color: var(--voda-white);
+}
+
+/* ── SWIPER / CAROUSEL DOTS ── */
+.voda-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--voda-radius-full);
+  background: var(--voda-white);
+  border: 1px solid var(--voda-red);
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.voda-carousel-dot--active {
+  background: var(--voda-red);
+  width: 32px;
+}
+@media (min-width: 46rem) {
+  .voda-carousel-dot { width: 10px; height: 10px; }
+  .voda-carousel-dot--active { width: 40px; }
+}
+
+/* ── FOCUS RING ── */
+.voda-focus:focus-visible {
+  outline: 2px solid var(--voda-black);
+  outline-offset: 2px;
+}
+
+/* ── PRICE DISPLAY ── */
+.voda-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  color: var(--voda-red);
+}
+.voda-price__integer {
+  font-weight: var(--voda-weight-extrabold);
+  font-size: 4rem;
+  line-height: 1;
+}
+.voda-price__cents {
+  font-weight: var(--voda-weight-bold);
+  font-size: 1.5rem;
+  line-height: 1;
+  position: relative;
+  top: -1.5rem;
+}
+.voda-price__currency {
+  font-weight: var(--voda-weight-bold);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.voda-price__period {
+  font-weight: var(--voda-weight-regular);
+  font-size: 1rem;
+  color: var(--voda-mid-gray);
+  margin-left: .25rem;
+}
+
+/* ── SECTION ── */
+.voda-section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+@media (min-width: 64rem) {
+  .voda-section {
+    padding: 4rem 2.5rem;
+  }
+}
+
+/* ── GRID ── */
+.voda-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.voda-grid--2 {
+  grid-template-columns: 1fr;
+}
+.voda-grid--3 {
+  grid-template-columns: 1fr;
+}
+.voda-grid--4 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 48rem) {
+  .voda-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .voda-grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .voda-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 64rem) {
+  .voda-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .voda-grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── BADGE ── */
+.voda-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 1.5rem;
+  padding: 0 .5rem;
+  border-radius: var(--voda-radius-full);
+  font-size: var(--voda-text-xs);
+  font-weight: var(--voda-weight-bold);
+}
+.voda-badge--red {
+  background: var(--voda-red);
+  color: var(--voda-white);
+}
+
+/* ── ACCORDION ── */
+.voda-accordion__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  background: none;
+  font-size: var(--voda-text-base);
+  font-weight: var(--voda-weight-bold);
+  color: var(--voda-black);
+  cursor: pointer;
+  border-bottom: 1px solid var(--voda-pale-gray);
+}
+.voda-accordion__content {
+  padding: 1rem 0;
+  font-size: var(--voda-text-sm);
+  color: var(--voda-dark-gray);
+}

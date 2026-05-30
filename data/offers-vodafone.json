@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "brand": "Vodafone",
+    "url": "https://www.vodafone.it",
+    "scraped": "2026-05-30",
+    "note": "Vodafone uses Next.js SSR with __NEXT_DATA__ JSON. Offer data extracted from live Next.js state. Hero slider shows: Internet a 29,95€/mese fissa, Superconvergenza con fino a 312€ di sconto, Samsung Galaxy S26. Red card shows: Rete Fissa + SIM a 33,90€/mese (was 27,95€ now 23,95€), attivazione gratis."
+  },
+  "mobile": [
+    {
+      "nome": "Vodafone Giga Unlimited",
+      "prezzo_mensile": "9,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "4,3 GB",
+      "note": "Offerta base mobile 5G illimitata"
+    },
+    {
+      "nome": "Vodafone Giga Unlimited+",
+      "prezzo_mensile": "14,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "8,6 GB",
+      "note": "Con più roaming UE"
+    },
+    {
+      "nome": "Vodafone Giga Unlimited Top",
+      "prezzo_mensile": "19,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "16,2 GB",
+      "note": "Top roaming UE incluso"
+    },
+    {
+      "nome": "Vodafone SIM Dati",
+      "prezzo_mensile": "14,99€",
+      "dati": "100 GB (5G)",
+      "minuti": "non inclusi",
+      "sms": "non inclusi",
+      "roaming_UE": "incluso",
+      "note": "SIM solo dati per tablet/router"
+    }
+  ],
+  "fisso": [
+    {
+      "nome": "Vodafone Internet Casa Fibra",
+      "prezzo_mensile": "29,95€",
+      "velocita_download": "1 Gbps (FTTH)",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "Vodafone Station incluso",
+      "note": "Esclusiva online, 12 mesi Vodafone Club incluso. Nessun vincolo."
+    },
+    {
+      "nome": "Vodafone Casa Wireless Plus",
+      "prezzo_mensile": "24,90€",
+      "velocita_download": "fino a 100 Mbps (FWA)",
+      "velocita_upload": "fino a 50 Mbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "FWA — solo online. Nessun vincolo."
+    }
+  ],
+  "energia": {
+    "disponibile": true,
+    "note": "Fastweb Energia — offerte luce tramite partnership Fastweb (post-fusione)",
+    "luce": [
+      {
+        "nome": "Fastweb Luce Flat Start",
+        "tipo": "flat",
+        "prezzo_mensile": "41€",
+        "consumo_annuo": "fino a 800 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Light",
+        "tipo": "flat",
+        "prezzo_mensile": "56€",
+        "consumo_annuo": "fino a 1500 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Pro",
+        "tipo": "flat",
+        "prezzo_mensile": "76€",
+        "consumo_annuo": "fino a 2500 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Maxi",
+        "tipo": "flat",
+        "prezzo_mensile": "91€",
+        "consumo_annuo": "fino a 4000 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato 36 mesi"
+      }
+    ],
+    "gas": []
+  },
+  "convergenza": [
+    {
+      "nome": "Vodafone Superconvergenza (Rete Fissa + SIM)",
+      "prezzo_mensile": "33,90€",
+      "include": "Fibra + SIM Mobile a 9,95€/mese",
+      "sconto_convergenza": "Fino a 312€ di sconto annuo",
+      "prezzo_fissa_sola": "27,95€ → 23,95€/mese con SIM",
+      "attivazione": "Gratis",
+      "attivazione_sim": "10€",
+      "vincolo": "Nessun vincolo di permanenza",
+      "note": "Dati estratti da __NEXT_DATA__ redCardConfig"
+    },
+    {
+      "nome": "Vodafone Casa + Mobile + Energia",
+      "prezzo_mensile": "variabile",
+      "include": "Rete Fissa + SIM Mobile + Luce Flat (Fastweb Energia)",
+      "sconto_convergenza": "Fino a 312€ di sconto",
+      "note": "Superconvergenza completa"
+    }
+  ],
+  "assicurazioni": {
+    "disponibile": true,
+    "note": "Vodafone Rete Sicura 2.0 — protezione digitale, sicurezza navigazione"
+  },
+  "smartphone_financing": {
+    "disponibile": true,
+    "nome_programma": "Vodafone Smartphone Easy",
+    "note": "Finanziamento smartphone a rate mensili con opzione swap. Disponibile per iPhone 17e, Samsung Galaxy S26, ecc."
+  },
+  "servizi_aggiuntivi": [
+    {
+      "nome": "Vodafone Club",
+      "prezzo_mensile": "3€",
+      "descrizione": "Sconti e occasioni esclusive — cinema, viaggi, shopping, esperienze",
+      " note": "Rinnovo automatico. Include concorso Fiat 500."
+    },
+    {
+      "nome": "Vodafone OneNumber",
+      "descrizione": "Condivisione piano dati su smartwatch"
+    },
+    {
+      "nome": "Vodafone Booster Seven",
+      "descrizione": "Estensore WiFi per casa"
+    },
+    {
+      "nome": "Wi-Fi Calling",
+      "descrizione": "Chiamate via WiFi in assenza di segnale"
+    },
+    {
+      "nome": "Vodafone Happy",
+      "descrizione": "Vantaggi dedicati ai clienti"
+    },
+    {
+      "nome": "eSIM Vodafone",
+      "descrizione": "SIM digitale per dispositivi compatibili"
+    }
+  ]
+}

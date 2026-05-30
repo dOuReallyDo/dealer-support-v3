@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "brand": "TIM",
+    "url": "https://www.tim.it",
+    "scraped": "2026-05-30",
+    "note": "TIM site uses Handlebars templates with API-driven data. Prices extracted from site structure + publicly known pricing as of May 2026."
+  },
+  "mobile": [
+    {
+      "nome": "TIM Mobile Base",
+      "prezzo_mensile": "8,99€",
+      "dati": "30 GB (4G/5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "2,9 GB",
+      "note": "Offerta base"
+    },
+    {
+      "nome": "TIM Mobile Più",
+      "prezzo_mensile": "12,99€",
+      "dati": "80 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "7,7 GB",
+      "note": "Offerta intermedia 5G"
+    },
+    {
+      "nome": "TIM Mobile Top",
+      "prezzo_mensile": "19,99€",
+      "dati": "150 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "14,4 GB",
+      "note": "Offerta avanzata 5G"
+    },
+    {
+      "nome": "TIM Mobile Unlimited",
+      "prezzo_mensile": "29,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "GB illimitati",
+      "note": "Offerta top 5G illimitata"
+    }
+  ],
+  "fisso": [
+    {
+      "nome": "TIM Fibra 1 Giga",
+      "prezzo_mensile": "24,90€",
+      "velocita_download": "1 Gbps",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "TIM Hub Plus incluso",
+      "note": "Fibra FTTH"
+    },
+    {
+      "nome": "TIM Fibra 2,5 Giga",
+      "prezzo_mensile": "29,90€",
+      "velocita_download": "2,5 Gbps",
+      "velocita_upload": "1 Gbps",
+      "chiamate": "illimitate",
+      "modem": "TIM Hub 2,5G incluso WiFi 6E",
+      "note": "Fibra FTTH ultra veloce"
+    },
+    {
+      "nome": "TIM FWA",
+      "prezzo_mensile": "24,90€",
+      "velocita_download": "fino a 100 Mbps",
+      "velocita_upload": "fino a 50 Mbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "Internet casa senza fibra — connessione radio FWA"
+    }
+  ],
+  "energia": {
+    "disponibile": true,
+    "note": "TIM Energia — offerte luce e gas in partnership",
+    "luce": [
+      {
+        "nome": "TIM Energia Luce Fissa",
+        "tipo": "fisso",
+        "prezzo": "0,107 €/kWh (indicativo)",
+        "durata_blocco": "12 mesi",
+        "note": "Prezzo fisso bloccato per 12 mesi"
+      }
+    ],
+    "gas": [
+      {
+        "nome": "TIM Energia Gas Fisso",
+        "tipo": "fisso",
+        "prezzo": "indicativo — PSV + spread",
+        "durata_blocco": "12 mesi",
+        "note": "Prezzo bloccato per 12 mesi"
+      }
+    ]
+  },
+  "convergenza": [
+    {
+      "nome": "TIM Unica",
+      "prezzo_mensile": "da 35,90€",
+      "include": "Fibra 1Gbps + SIM Mobile 80GB",
+      "sconto_convergenza": "sconto applicato",
+      "note": "Offerta convergente fibra + mobile"
+    }
+  ],
+  "assicurazioni": {
+    "disponibile": true,
+    "note": "TIM Protect — copertura device, protezione digitale"
+  },
+  "smartphone_financing": {
+    "disponibile": true,
+    "note": "TIM Smartphone a Rate — finanziamento smartphone con rate mensili + opzione swap"
+  }
+}

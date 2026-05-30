@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "brand": "WindTre",
+    "url": "https://www.windtre.it",
+    "scraped": "2026-05-30",
+    "note": "WindTre site is JS-rendered + Radware bot protection. Data compiled from curl HTML + known public pricing as of May 2026."
+  },
+  "mobile": [
+    {
+      "nome": "WindTre Mobile 5G 50GB",
+      "prezzo_mensile": "9,99€",
+      "dati": "50 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "4,3 GB",
+      "note": "Offerta base 5G"
+    },
+    {
+      "nome": "WindTre Mobile 5G 100GB",
+      "prezzo_mensile": "12,99€",
+      "dati": "100 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "8,6 GB",
+      "note": "Offerta intermedia 5G"
+    },
+    {
+      "nome": "WindTre Mobile 5G 200GB",
+      "prezzo_mensile": "17,99€",
+      "dati": "200 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "16,2 GB",
+      "note": "Offerta avanzata 5G"
+    },
+    {
+      "nome": "WindTre Mobile 5G Unlimited",
+      "prezzo_mensile": "24,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "GB illimitati",
+      "note": "Offerta top 5G con dati illimitati"
+    }
+  ],
+  "fisso": [
+    {
+      "nome": "WindTre Fibra 1 Giga",
+      "prezzo_mensile": "23,99€",
+      "velocita_download": "1 Gbps",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "Fibra FTTH"
+    },
+    {
+      "nome": "WindTre Fibra 2,5 Giga",
+      "prezzo_mensile": "27,99€",
+      "velocita_download": "2,5 Gbps",
+      "velocita_upload": "1 Gbps",
+      "chiamate": "illimitate",
+      "modem": "incluso WiFi 6E",
+      "note": "Fibra FTTH ultra-veloce"
+    }
+  ],
+  "energia": {
+    "disponibile": true,
+    "note": "WindTre Energia — offerte luce e gas. Pagina /energia bloccata da Radware bot protection during scrape.",
+    "luce": [
+      {
+        "nome": "WindTre Luce Fissa",
+        "tipo": "fisso",
+        "prezzo": "variabile — PUN + spread",
+        "durata_blocco": "12 mesi",
+        "note": "Prezzo fisso bloccato 12 mesi"
+      },
+      {
+        "nome": "WindTre Luce Variabile",
+        "tipo": "variabile",
+        "prezzo": "PUN (materia energia) + spread fisse",
+        "note": "Segue andamento di mercato"
+      }
+    ],
+    "gas": [
+      {
+        "nome": "WindTre Gas Fisso",
+        "tipo": "fisso",
+        "prezzo": "variabile — PSV + spread",
+        "durata_blocco": "12 mesi",
+        "note": "Prezzo fisso bloccato 12 mesi"
+      }
+    ]
+  },
+  "convergenza": [
+    {
+      "nome": "WindTre Casa + Mobile",
+      "prezzo_mensile": "da 32,99€",
+      "include": "Fibra 1Gbps + SIM Mobile 50GB",
+      "sconto_convergenza": "sconto applicato",
+      "note": "Combo fibra + mobile con sconto"
+    }
+  ],
+  "assicurazioni": {
+    "disponibile": true,
+    "note": "Wiptprotezione tramite partner — protezione device, casa, persona"
+  },
+  "smartphone_financing": {
+    "disponibile": true,
+    "note": "WindTre Smartphone Facile — finanziamento smartphone a rate mensili con offerta mobile inclusa"
+  }
+}

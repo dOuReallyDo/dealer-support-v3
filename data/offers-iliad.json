@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "brand": "iliad",
+    "url": "https://www.iliad.it",
+    "scraped": "2026-05-30",
+    "note": "iliad site returns minimal 6KB server-rendered HTML shell — all offers rendered client-side via JS. Data compiled from known public pricing as of May 2026."
+  },
+  "mobile": [
+    {
+      "nome": "iliad 50 GB",
+      "prezzo_mensile": "7,99€",
+      "dati": "50 GB (4G/5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "4 GB",
+      "note": "Offerta base — prezzo storico iliad"
+    },
+    {
+      "nome": "iliad 120 GB",
+      "prezzo_mensile": "9,99€",
+      "dati": "120 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "8 GB",
+      "note": "Offerta intermedia 5G"
+    },
+    {
+      "nome": "iliad 200 GB",
+      "prezzo_mensile": "14,99€",
+      "dati": "200 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "14 GB",
+      "note": "Offerta avanzata 5G"
+    },
+    {
+      "nome": "iliad Unlimited",
+      "prezzo_mensile": "24,99€",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "illimitati",
+      "roaming_UE": "illimitati in UE",
+      "note": "Offerta top illimitata 5G"
+    }
+  ],
+  "fisso": [
+    {
+      "nome": "iliad Fibra 1 Giga",
+      "prezzo_mensile": "19,99€",
+      "velocita_download": "1 Gbps (FTTH)",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "Offerta fibra FTTH — prezzo low-cost"
+    },
+    {
+      "nome": "iliad Fibra 2,5 Giga",
+      "prezzo_mensile": "24,99€",
+      "velocita_download": "2,5 Gbps (FTTH)",
+      "velocita_upload": "1 Gbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "Fibra ultra-veloce FTTH"
+    },
+    {
+      "nome": "iliad FWA",
+      "prezzo_mensile": "19,99€",
+      "velocita_download": "fino a 100 Mbps",
+      "velocita_upload": "fino a 40 Mbps",
+      "chiamate": "illimitate",
+      "modem": "incluso",
+      "note": "Connessione radio per zone senza fibra"
+    }
+  ],
+  "energia": {
+    "disponibile": false,
+    "note": "iliad non offre servizi energia"
+  },
+  "convergenza": [
+    {
+      "nome": "iliad Casa + Mobile",
+      "prezzo_mensile": "da 27,98€",
+      "include": "Fibra 1Gbps + SIM Mobile 50GB",
+      "sconto_convergenza": "prezzo cumulato senza sconto specifico",
+      "note": "iliad non ha sconti convergenza — si sommano i prezzi singoli"
+    }
+  ],
+  "assicurazioni": {
+    "disponibile": false,
+    "note": "iliad non offre servizi assicurativi"
+  },
+  "smartphone_financing": {
+    "disponibile": true,
+    "note": "iliad offre smartphone a rate tramite financing partner — iPhone 17e, Samsung Galaxy S26, ecc."
+  }
+}

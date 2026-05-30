@@ -1,26 +1,768 @@
-@import "tailwindcss";
+/* ==========================================================================
+   Dealer Support v3 — Core Design System
+   Neutral theme that gets overridden by brand CSS per operator
+   ========================================================================== */
 
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Custom Properties (Neutral defaults) ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ds-bg: #f7f7f7;
+  --ds-surface: #ffffff;
+  --ds-surface-hover: #f5f5f5;
+  --ds-border: #e0e0e0;
+  --ds-border-subtle: #f0f0f0;
+
+  --ds-text-primary: #1a1a1a;
+  --ds-text-secondary: #555555;
+  --ds-text-muted: #888888;
+
+  --ds-brand: #ff6b00;
+  --ds-brand-hover: #e55e00;
+  --ds-brand-light: #fff5eb;
+  --ds-brand-text: #ffffff;
+
+  --ds-success: #22c55e;
+  --ds-danger: #ef4444;
+  --ds-warning: #f59e0b;
+
+  --ds-radius-sm: 6px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 12px;
+  --ds-radius-xl: 16px;
+  --ds-radius-full: 9999px;
+
+  --ds-shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --ds-shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --ds-shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 20px;
+  --ds-space-6: 24px;
+
+  --ds-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ds-font-xs: 11px;
+  --ds-font-sm: 12px;
+  --ds-font-base: 14px;
+  --ds-font-md: 15px;
+  --ds-font-lg: 17px;
+  --ds-font-xl: 20px;
+  --ds-font-2xl: 24px;
+  --ds-font-3xl: 28px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Operator brand overrides ── */
+/* WindTre */
+[data-operator="windtre"] {
+  --ds-brand: #fc4a14;
+  --ds-brand-hover: #e04010;
+  --ds-brand-light: #fff4ed;
+  --ds-brand-text: #ffffff;
+  --ds-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* TIM */
+[data-operator="tim"] {
+  --ds-brand: #122ac2;
+  --ds-brand-hover: #0e2199;
+  --ds-brand-light: #eef0fb;
+  --ds-brand-text: #ffffff;
+  --ds-font-family: 'TIMSans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Vodafone */
+[data-operator="vodafone"] {
+  --ds-brand: #e60000;
+  --ds-brand-hover: #cc0000;
+  --ds-brand-light: #fff0f0;
+  --ds-brand-text: #ffffff;
+  --ds-font-family: 'Vodafone', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Fastweb */
+[data-operator="fastweb"] {
+  --ds-brand: #cc0000;
+  --ds-brand-hover: #aa0000;
+  --ds-brand-light: #fff0f0;
+  --ds-brand-text: #ffffff;
+  --ds-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* iliad */
+[data-operator="iliad"] {
+  --ds-brand: #cc0000;
+  --ds-brand-hover: #aa0000;
+  --ds-brand-light: #fff0f0;
+  --ds-brand-text: #ffffff;
+  --ds-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Category brand overrides ── */
+.cat-mobile {
+  --cat-a: var(--ds-brand);
+  --cat-bg: var(--ds-brand-light);
+}
+.cat-fissa {
+  --cat-a: #6207ab;
+  --cat-bg: #f7f3fb;
+}
+.cat-energia {
+  --cat-a: #00775a;
+  --cat-bg: #e8f5f0;
+}
+.cat-assicurazioni {
+  --cat-a: #003dca;
+  --cat-bg: #e8eaf6;
+}
+.cat-smartphone {
+  --cat-a: #8e03ff;
+  --cat-bg: #f3e5f5;
+}
+
+/* ── Base ── */
+html, body {
+  font-family: var(--ds-font-family);
+  font-size: var(--ds-font-base);
+  line-height: 1.5;
+  color: var(--ds-text-primary);
+  background: var(--ds-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── App Layout ── */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ds-space-3) var(--ds-space-5);
+  background: var(--ds-surface);
+  border-bottom: 1px solid var(--ds-border);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  gap: var(--ds-space-3);
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+.app-logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-brand);
+  color: var(--ds-brand-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.app-logo-mark img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.app-title {
+  font-size: var(--ds-font-xl);
+  font-weight: 700;
+  color: var(--ds-text-primary);
+}
+
+.app-subtitle {
+  font-size: var(--ds-font-xs);
+  color: var(--ds-text-muted);
+}
+
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+/* ── Operator Selector ── */
+.operator-selector {
+  display: flex;
+  gap: 2px;
+  background: var(--ds-bg);
+  border-radius: var(--ds-radius-lg);
+  padding: 3px;
+}
+
+.op-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  padding: 8px 14px;
+  border: none;
+  border-radius: var(--ds-radius-md);
+  background: transparent;
+  color: var(--ds-text-secondary);
+  font-weight: 600;
+  font-size: var(--ds-font-sm);
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: var(--ds-font-family);
+  white-space: nowrap;
+}
+
+.op-btn:hover {
+  background: var(--ds-surface);
+  color: var(--ds-text-primary);
+}
+
+.op-btn.active {
+  background: var(--ds-surface);
+  color: var(--ds-brand);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.op-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ── Stat Chip ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--ds-font-xs);
+  color: var(--ds-text-muted);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-full);
+  padding: 4px 12px;
+}
+
+.chip strong {
+  color: var(--ds-brand);
+  font-weight: 700;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-lg);
+  padding: var(--ds-space-4);
+}
+
+.card-brand {
+  background: linear-gradient(135deg, var(--ds-surface), var(--ds-brand-light));
+  border-color: var(--ds-brand-light);
+}
+
+/* ── Category card with left bar ── */
+.card-cat {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-lg);
+  padding: var(--ds-space-4);
+  border-left: 4px solid var(--cat-a, var(--ds-brand));
+}
+
+/* ── Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  font-size: var(--ds-font-sm);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--ds-radius-sm);
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: var(--ds-font-family);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--ds-brand);
+  color: var(--ds-brand-text);
+}
+.btn-primary:hover {
+  background: var(--ds-brand-hover);
+}
+
+.btn-outline {
+  background: var(--ds-surface);
+  color: var(--ds-text-primary);
+  border: 1px solid var(--ds-border);
+}
+.btn-outline:hover {
+  background: var(--ds-surface-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ds-text-secondary);
+  border: 1px solid var(--ds-border);
+}
+.btn-ghost:hover {
+  background: var(--ds-surface);
+  color: var(--ds-text-primary);
+}
+
+.btn-danger {
+  background: var(--ds-danger);
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: var(--ds-font-xs);
+}
+
+.btn-lg {
+  padding: 10px 20px;
+  font-size: var(--ds-font-base);
+}
+
+/* ── Input ── */
+.input {
+  padding: 8px 12px;
+  font-size: var(--ds-font-base);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-surface);
+  color: var(--ds-text-primary);
+  font-family: var(--ds-font-family);
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ds-brand);
+  box-shadow: 0 0 0 3px var(--ds-brand-light);
+}
+
+.input::placeholder {
+  color: var(--ds-text-muted);
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--ds-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  padding: 8px 16px;
+  font-size: var(--ds-font-md);
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  color: var(--ds-text-secondary);
+  white-space: nowrap;
+  transition: all 150ms ease;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: var(--ds-font-family);
+}
+
+.tab:hover {
+  color: var(--ds-text-primary);
+  background: var(--ds-surface-hover);
+}
+
+.tab.active {
+  color: var(--ds-brand);
+  border-bottom-color: var(--ds-brand);
+  font-weight: 600;
+}
+
+/* ── Config Layout ── */
+.config-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.config-body {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--ds-space-5);
+  padding: var(--ds-space-5);
+  flex: 1;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .config-body {
+    grid-template-columns: 1fr;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Catalog ── */
+.config-catalog {
+  min-width: 0;
+}
+
+.cat-section {
+  margin-bottom: var(--ds-space-5);
+}
+
+.cat-head {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  margin-bottom: var(--ds-space-3);
+}
+
+.cat-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--ds-radius-sm);
+  background: var(--cat-bg, var(--ds-brand-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cat-head h3 {
+  font-size: var(--ds-font-lg);
+  font-weight: 700;
+  color: var(--ds-text-primary);
+}
+
+/* ── Offers Grid ── */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--ds-space-3);
+}
+
+/* ── Offer Card ── */
+.offer-card {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  cursor: default;
+}
+
+.offer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ds-shadow-md);
+}
+
+.offer-card .name {
+  font-size: var(--ds-font-md);
+  font-weight: 600;
+  color: var(--ds-text-primary);
+  margin-bottom: 2px;
+}
+
+.offer-card .desc {
+  font-size: var(--ds-font-sm);
+  color: var(--ds-text-muted);
+  margin-bottom: var(--ds-space-2);
+}
+
+.offer-card .features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: var(--ds-space-3);
+}
+
+.offer-card .feature {
+  font-size: var(--ds-font-xs);
+  padding: 2px 8px;
+  border-radius: var(--ds-radius-full);
+  background: var(--cat-bg, var(--ds-brand-light));
+  color: var(--cat-a, var(--ds-brand));
+  font-weight: 500;
+}
+
+.offer-card .price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ds-space-2);
+}
+
+.offer-card .price {
+  font-size: var(--ds-font-xl);
+  font-weight: 700;
+  color: var(--ds-text-primary);
+}
+
+.offer-card .billing {
+  font-size: var(--ds-font-xs);
+  color: var(--ds-text-muted);
+}
+
+.offer-card .discount-badge {
+  font-size: var(--ds-font-xs);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--ds-radius-full);
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.offer-card .qty-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+}
+
+.qty-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--ds-radius-md);
+  border: 1px solid var(--ds-border);
+  background: var(--ds-surface);
+  color: var(--ds-text-primary);
+  font-size: var(--ds-font-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-family);
+}
+
+.qty-controls button:hover:not(:disabled) {
+  background: var(--ds-brand);
+  color: var(--ds-brand-text);
+  border-color: var(--ds-brand);
+}
+
+.qty-controls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.qty-controls b {
+  font-size: var(--ds-font-lg);
+  min-width: 24px;
+  text-align: center;
+}
+
+/* ── Cart Sidebar ── */
+.config-cart {
+  position: sticky;
+  top: 72px;
+  max-height: calc(100vh - 88px);
+  overflow-y: auto;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ds-space-4);
+}
+
+.cart-header h2 {
+  font-size: var(--ds-font-lg);
+  font-weight: 700;
+}
+
+.cart-group {
+  margin-bottom: var(--ds-space-3);
+}
+
+.cart-group h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--ds-font-sm);
+  font-weight: 600;
+  color: var(--ds-text-secondary);
+  padding-bottom: var(--ds-space-1);
+  border-bottom: 1px solid var(--ds-border-subtle);
+  margin-bottom: var(--ds-space-1);
+}
+
+.cart-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--ds-font-sm);
+  color: var(--ds-text-secondary);
+  padding: 2px 0;
+}
+
+.cart-line .line-price {
+  font-weight: 600;
+  color: var(--ds-text-primary);
+}
+
+.cart-discount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--ds-font-sm);
+  color: var(--ds-success);
+  padding: 2px 0;
+  font-weight: 600;
+}
+
+.cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--ds-space-3);
+  border-top: 2px solid var(--ds-brand);
+  margin-top: var(--ds-space-3);
+}
+
+.cart-total .total-label {
+  font-size: var(--ds-font-sm);
+  font-weight: 600;
+  color: var(--ds-text-secondary);
+}
+
+.cart-total .total-value {
+  font-size: var(--ds-font-2xl);
+  font-weight: 800;
+  color: var(--ds-brand);
+}
+
+.cart-empty {
+  color: var(--ds-text-muted);
+  font-size: var(--ds-font-sm);
+  text-align: center;
+  padding: var(--ds-space-5) 0;
+}
+
+.cart-empty-icon {
+  font-size: 32px;
+  margin-bottom: var(--ds-space-2);
+}
+
+/* ── Landing Page ── */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: #f8fafc;
+  padding: var(--ds-space-6);
+  text-align: center;
+}
+
+.landing h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: var(--ds-space-3);
+  letter-spacing: -1px;
+}
+
+.landing h1 span {
+  color: #ff6b00;
+}
+
+.landing p {
+  font-size: var(--ds-font-lg);
+  color: #94a3b8;
+  max-width: 500px;
+  margin-bottom: var(--ds-space-5);
+}
+
+.landing-operators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+  justify-content: center;
+  margin-bottom: var(--ds-space-5);
+}
+
+.landing-op-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--ds-radius-xl);
+  color: #f8fafc;
+  font-size: var(--ds-font-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  font-family: var(--ds-font-family);
+}
+
+.landing-op-btn:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
+.landing-op-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.landing-version {
+  font-size: var(--ds-font-xs);
+  color: #64748b;
+  margin-top: var(--ds-space-5);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;
+    gap: var(--ds-space-2);
+  }
+  .operator-selector {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  .config-body {
+    padding: var(--ds-space-3);
+  }
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeIn 300ms ease-out;
 }

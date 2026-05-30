@@ -1,0 +1,1571 @@
+/* ============================================================================
+   WindTre Brand Design System — Extracted from https://www.windtre.it
+   Generated: 2026-05-30
+   
+   Source: AEM clientlib-site CSS + clientlib-mainjs CSS
+   Note: WindTre uses "primary" = orange (#fc4a14) and "purple" (#6207ab) 
+   as their two main brand colors. The purple is the dominant site accent.
+   Font: Montserrat (primary), Nunito Sans (secondary)
+   ============================================================================ */
+
+/* ============================================================================
+   1. CSS CUSTOM PROPERTIES / DESIGN TOKENS
+   ============================================================================ */
+:root {
+  /* ── Primary Brand: Orange (WindTre "primary" in their system) ── */
+  --wt-color-primary:            #fc4a14;
+  --wt-color-primary-150:        #a62802;
+  --wt-color-primary-140:        #ba2d02;
+  --wt-color-primary-130:        #ce3203;
+  --wt-color-primary-120:        #e33703;
+  --wt-color-primary-110:        #f73c03;
+  --wt-color-primary-90:         #fc5826;
+  --wt-color-primary-80:         #fc683b;
+  --wt-color-primary-70:         #fd774f;
+  --wt-color-primary-60:         #fd8763;
+  --wt-color-primary-50:         #fd9677;
+  --wt-color-primary-40:         #fea68b;
+  --wt-color-primary-30:         #feb59f;
+  --wt-color-primary-20:         #fec5b3;
+  --wt-color-primary-10:         #fed4c8;
+  --wt-color-primary-5:         #ffe4dc;
+
+  /* ── Purple Brand: WindTre dominant accent ── */
+  --wt-color-purple:             #6207ab;
+  --wt-color-purple-dark:        #4f058b;
+  --wt-color-purple-deep:        #6b2d9e;
+  --wt-color-purple-bright:      #8e03ff;
+  --wt-color-purple-light:      #c09cdd;
+  --wt-color-purple-bg:          #f7f3fb;
+  --wt-color-purple-bg-active:   #efe6f7;
+  --wt-color-purple-border:      #d0b5e6;
+
+  /* ── Blue Accent ── */
+  --wt-color-blue:               #3db5e6;
+  --wt-color-dark-blue:          #0044e0;
+  --wt-color-dark-blue-hover:    #003dca;
+  --wt-color-dark-blue-disabled: #d9e3fa;
+  --wt-color-light-blue:         #5998ff;
+  --wt-color-light-blue-hover:   #5089e6;
+
+  /* ── Green Accent (Energia/Luce) ── */
+  --wt-color-green:              #6dcb99;
+  --wt-color-green-dark:         #075e54;
+  --wt-color-green-action:       #0dac2c;
+
+  /* ── Red / Error ── */
+  --wt-color-red:                #ad1010;
+
+  /* ── Neutrals ── */
+  --wt-color-black:              #1e1e1e;
+  --wt-color-darkblack:          #101010;
+  --wt-color-grey-dark:          #595959;
+  --wt-color-grey-mid:           #9e9e9e;
+  --wt-color-grey-placeholder:   #97999b;
+  --wt-color-grey-light:         #c6c6c6;
+  --wt-color-grey-border:        #d3d3d2;
+  --wt-color-grey-bg:            #f4f4f4;
+  --wt-color-grey-bg-alt:        #f8f8f8;
+  --wt-color-white:              #ffffff;
+  --wt-color-white-80:           hsla(0, 0%, 100%, 0.8);
+  --wt-color-white-40:           hsla(0, 0%, 100%, 0.4);
+
+  /* ── Typography ── */
+  --wt-font-primary:             'Montserrat', sans-serif;
+  --wt-font-secondary:           'Nunito Sans', sans-serif;
+
+  /* Font Weights */
+  --wt-font-weight-light:        300;
+  --wt-font-weight-regular:      400;
+  --wt-font-weight-semibold:     600;
+  --wt-font-weight-bold:         700;
+  --wt-font-weight-extrabold:    800;
+
+  /* Type Scale — Desktop */
+  --wt-font-size-uber-1:         52px;
+  --wt-font-size-uber-2:         46px;
+  --wt-font-size-uber-3:         41px;
+  --wt-font-size-headline-1:     48px;   /* 4pc in source */
+  --wt-font-size-headline-2:     40px;
+  --wt-font-size-headline-3:     24px;
+  --wt-font-size-h1:             32px;   /* 2pc in source */
+  --wt-font-size-h2:             28px;
+  --wt-font-size-h3:             26px;
+  --wt-font-size-h4:             24px;
+  --wt-font-size-h5:             20px;
+  --wt-font-size-h6:             18px;
+  --wt-font-size-body:           16px;   /* 1pc in source */
+  --wt-font-size-body-s:         14px;
+  --wt-font-size-xs:             12px;   /* 9pt in source */
+  --wt-font-size-note:           11px;
+
+  /* Line Heights */
+  --wt-line-height-uber-1:       68px;
+  --wt-line-height-uber-2:       60px;
+  --wt-line-height-uber-3:       52px;
+  --wt-line-height-headline-1:   68px;
+  --wt-line-height-headline-2:   46px;
+  --wt-line-height-headline-3:   30px;
+  --wt-line-height-h1:           40px;
+  --wt-line-height-h2:           36px;
+  --wt-line-height-h3:           36px;
+  --wt-line-height-h4:           32px;   /* 2pc in source */
+  --wt-line-height-h5:           28px;
+  --wt-line-height-body:         24px;
+  --wt-line-height-body-s:       20px;
+  --wt-line-height-xs:           16px;   /* 1pc in source */
+  --wt-line-height-note:         16px;
+
+  /* ── Spacing ── */
+  --wt-spacing-xs:               4px;
+  --wt-spacing-sm:               8px;
+  --wt-spacing-md:               16px;   /* 1pc in source */
+  --wt-spacing-lg:               24px;
+  --wt-spacing-xl:               32px;   /* 2pc in source */
+  --wt-spacing-2xl:              40px;
+  --wt-spacing-3xl:              48px;   /* 3pc in source */
+  --wt-spacing-section:          60px;
+
+  /* ── Border Radius ── */
+  --wt-radius-xs:                4px;
+  --wt-radius-sm:                5px;
+  --wt-radius-md:                8px;
+  --wt-radius-lg:                10px;
+  --wt-radius-xl:                16px;   /* 1pc in source */
+  --wt-radius-2xl:               24px;   /* 1.5pc in source */
+  --wt-radius-3xl:               28px;
+  --wt-radius-pill:              30px;   /* 75pt ≈ 100px for buttons; 30px for compact */
+  --wt-radius-pill-large:        75pt;   /* Exact source value for outline buttons */
+  --wt-radius-circle:            50%;
+
+  /* ── Shadows ── */
+  --wt-shadow-card:              0 4px 8px 0 rgba(0, 0, 0, 0.1), 2px 10px 32px 0 rgba(0, 0, 0, 0.1);
+  --wt-shadow-card-lg:           0 4px 20px rgba(0, 0, 0, 0.15);
+  --wt-shadow-search:            0 2px 4px 0 rgba(0, 0, 0, 0.1), 1px 4px 12px 0 rgba(0, 0, 0, 0.1);
+  --wt-shadow-dropdown:          0 23px 49px 0 rgba(0, 0, 0, 0.23);
+  --wt-shadow-modal:             0 4px 8px rgba(0, 0, 0, 0.1), 2px 10px 32px rgba(0, 0, 0, 0.1);
+  --wt-shadow-focus-purple:      0 0 0 10px rgba(192, 156, 221, 0.6);
+  --wt-shadow-focus-purple-sm:   0 0 1px #6207ab;
+
+  /* ── Transitions ── */
+  --wt-transition-fast:          all 0.1s linear;
+  --wt-transition-base:          all 0.2s ease-in;
+  --wt-transition-moderate:      all 0.3s ease-in-out;
+  --wt-transition-slow:          all 0.5s ease-in-out;
+
+  /* ── Z-Index Scale ── */
+  --wt-z-dropdown:               1;
+  --wt-z-sticky:                  99;
+  --wt-z-overlay:                 9999;
+  --wt-z-modal:                   9999999999999;
+}
+
+/* ============================================================================
+   2. TYPOGRAPHY
+   ============================================================================ */
+
+/* ── Font Face Declarations (use Google Fonts CDN or self-host) ── */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+/* ── Base Reset (matches AEM source) ── */
+.wt-typography h1,
+.wt-typography h2,
+.wt-typography h3,
+.wt-typography h4,
+.wt-typography h5,
+.wt-typography h6,
+.wt-typography p {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* ── Headings ── */
+.wt-title-uber-1 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-uber-1) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-uber-1) !important;
+}
+.wt-title-uber-2 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-uber-2) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-uber-2) !important;
+}
+.wt-title-uber-3 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-uber-3) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-uber-3) !important;
+}
+.wt-title-headline-1 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-headline-1) !important;
+  font-weight: var(--wt-font-weight-extrabold) !important;
+  line-height: var(--wt-line-height-headline-1) !important;
+}
+.wt-title-headline-2 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-headline-2) !important;
+  font-weight: var(--wt-font-weight-extrabold) !important;
+  line-height: var(--wt-line-height-headline-2) !important;
+}
+.wt-title-headline-3 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-headline-3) !important;
+  font-weight: var(--wt-font-weight-extrabold) !important;
+  line-height: var(--wt-line-height-headline-3) !important;
+}
+
+.wt-h1 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h1) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h1) !important;
+}
+.wt-h2 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h2) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h2) !important;
+}
+.wt-h3 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h3) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h3) !important;
+}
+.wt-h4 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h4) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h4) !important;
+}
+.wt-h5 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h5) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h5) !important;
+}
+.wt-h6 {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-h6) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-body) !important;
+}
+
+/* ── Body Text ── */
+.wt-text-standard {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body) !important;
+  font-weight: var(--wt-font-weight-regular);
+  line-height: var(--wt-line-height-body) !important;
+}
+.wt-text-s {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s) !important;
+  font-weight: var(--wt-font-weight-regular) !important;
+  line-height: var(--wt-line-height-body-s) !important;
+}
+.wt-text-s strong {
+  font-weight: var(--wt-font-weight-bold) !important;
+}
+.wt-text-xs {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-xs) !important;
+  font-weight: var(--wt-font-weight-regular) !important;
+  line-height: var(--wt-line-height-xs) !important;
+}
+.wt-text-xs strong {
+  font-weight: var(--wt-font-weight-bold) !important;
+}
+.wt-text-note {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-note) !important;
+  font-weight: var(--wt-font-weight-regular) !important;
+  line-height: var(--wt-line-height-note) !important;
+}
+.wt-text-note strong {
+  font-weight: var(--wt-font-weight-bold) !important;
+}
+
+.wt-semibold { font-weight: var(--wt-font-weight-semibold) !important; }
+
+/* ── Color Utility Classes ── */
+.wt-color-primary      { color: var(--wt-color-primary) !important; }
+.wt-color-purple        { color: var(--wt-color-purple) !important; }
+.wt-color-black         { color: var(--wt-color-black) !important; }
+.wt-color-white         { color: var(--wt-color-white) !important; }
+.wt-color-grey-dark     { color: var(--wt-color-grey-dark) !important; }
+.wt-color-grey-mid      { color: var(--wt-color-grey-mid) !important; }
+.wt-color-blue          { color: var(--wt-color-blue) !important; }
+.wt-color-green         { color: var(--wt-color-green) !important; }
+.wt-color-red           { color: var(--wt-color-red) !important; }
+
+.wt-bg-primary          { background-color: var(--wt-color-primary) !important; }
+.wt-bg-purple           { background-color: var(--wt-color-purple) !important; }
+.wt-bg-purple-light     { background-color: var(--wt-color-purple-bg) !important; }
+.wt-bg-purple-active    { background-color: var(--wt-color-purple-bg-active) !important; }
+.wt-bg-darkblack        { background-color: var(--wt-color-darkblack) !important; }
+.wt-bg-dark-blue        { background-color: var(--wt-color-dark-blue) !important; }
+.wt-bg-light-blue       { background-color: var(--wt-color-light-blue) !important; }
+.wt-bg-grey             { background-color: var(--wt-color-grey-bg) !important; }
+.wt-bg-grey-alt         { background-color: var(--wt-color-grey-bg-alt) !important; }
+.wt-bg-white            { background-color: var(--wt-color-white) !important; }
+
+/* Purple background pill badge (used for tags/labels) */
+.wt-color-purple-bg-text {
+  background-color: var(--wt-color-purple-bg);
+  border-radius: var(--wt-radius-md);
+  color: var(--wt-color-purple) !important;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-body-s);
+  padding: var(--wt-spacing-sm);
+  width: auto;
+}
+
+/* ============================================================================
+   3. BUTTONS
+   ============================================================================ */
+
+/* ── Base Button (black/default) ── */
+.wt-button {
+  background: var(--wt-color-black);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button:hover {
+  background: var(--wt-color-black);
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button:disabled {
+  background: var(--wt-color-grey-mid);
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+.wt-button:focus-visible {
+  box-shadow: var(--wt-shadow-focus-purple);
+  outline: none;
+}
+
+/* ── Primary Button: Orange ── */
+.wt-button--primary-orange {
+  background: var(--wt-color-primary);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-orange:hover {
+  background: var(--wt-color-primary-120);
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button--primary-orange:disabled {
+  background: var(--wt-color-primary-40);
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+
+/* ── Primary Button: Purple ── */
+.wt-button--primary-purple {
+  background: var(--wt-color-purple);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-purple:hover {
+  background: var(--wt-color-purple-dark);
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button--primary-purple:disabled {
+  background: var(--wt-color-purple-light);
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+
+/* ── Primary Button: Green ── */
+.wt-button--primary-green {
+  background: var(--wt-color-green-action);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-green:hover {
+  background: var(--wt-color-green-action);
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button--primary-green:disabled {
+  background: var(--wt-color-green-action);
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+
+/* ── Primary Button: Black ── */
+.wt-button--primary-black {
+  background: #000000;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-black:hover {
+  background: #323232;
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button--primary-black:disabled {
+  background: #8c8c8c;
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+
+/* ── Primary Button: White ── */
+.wt-button--primary-white {
+  background: var(--wt-color-white);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-white:hover {
+  background: var(--wt-color-white-80);
+  border-color: transparent;
+  color: #000000;
+}
+.wt-button--primary-white:disabled {
+  background: hsla(0, 0%, 100%, 0.302);
+  border-color: transparent;
+  color: #000000;
+  cursor: not-allowed;
+}
+
+/* ── Primary Button: Dark Blue ── */
+.wt-button--primary-dark-blue {
+  background: var(--wt-color-dark-blue);
+  border: 2px solid transparent;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--primary-dark-blue:hover {
+  background: var(--wt-color-dark-blue-hover);
+  border-color: transparent;
+  color: var(--wt-color-white);
+}
+.wt-button--primary-dark-blue:disabled {
+  background: var(--wt-color-dark-blue-disabled);
+  border-color: transparent;
+  color: var(--wt-color-white);
+  cursor: not-allowed;
+}
+
+/* ── Secondary Button: Orange (outline) ── */
+.wt-button--secondary-orange {
+  background: var(--wt-color-white);
+  border: 2px solid var(--wt-color-primary);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-primary) !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--secondary-orange:hover {
+  background: var(--wt-color-primary-5);
+  border-color: var(--wt-color-primary);
+  color: var(--wt-color-primary);
+}
+.wt-button--secondary-orange:disabled {
+  background: var(--wt-color-white);
+  border-color: var(--wt-color-primary-40);
+  color: var(--wt-color-primary-40);
+  cursor: not-allowed;
+}
+
+/* ── Secondary Button: Purple (outline) ── */
+.wt-button--secondary-purple {
+  background: var(--wt-color-white);
+  border: 2px solid var(--wt-color-purple);
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: var(--wt-color-purple) !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  min-width: 150px;
+  padding-left: 24px;
+  padding-right: 24px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--wt-transition-base);
+}
+.wt-button--secondary-purple:hover {
+  background: var(--wt-color-purple-bg);
+  border-color: var(--wt-color-purple);
+  color: var(--wt-color-purple);
+}
+.wt-button--secondary-purple:disabled {
+  background: var(--wt-color-white);
+  border-color: var(--wt-color-purple-light);
+  color: var(--wt-color-purple-light);
+  cursor: not-allowed;
+}
+
+/* ── Link-style button (text link with underline) ── */
+.wt-button--link {
+  color: var(--wt-color-purple);
+  cursor: pointer;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body);
+  font-weight: var(--wt-font-weight-semibold);
+  letter-spacing: 0.32px;
+  line-height: var(--wt-line-height-body);
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-style: solid;
+  text-decoration-thickness: auto;
+  background: none;
+  border: none;
+  display: inline;
+  padding: 0;
+  min-width: unset;
+}
+.wt-button--link:hover {
+  text-decoration: none;
+}
+
+/* ── Outline pill button (for filters/confirm) ── */
+.wt-button--outline-pill {
+  align-items: center;
+  border: 2px solid var(--wt-color-purple);
+  border-radius: var(--wt-radius-pill-large);
+  box-sizing: border-box;
+  color: var(--wt-color-purple);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  min-width: 96px; /* 8pc in source */
+  padding: 6px 20px;
+  text-transform: uppercase;
+  background: transparent;
+  transition: var(--wt-transition-base);
+}
+.wt-button--outline-pill:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Button text underline style (from cmp-button__text) */
+.wt-button__text {
+  text-decoration: underline;
+}
+.wt-button:hover .wt-button__text {
+  text-decoration: none;
+}
+
+/* ============================================================================
+   4. CARDS / PANELS
+   ============================================================================ */
+
+/* ── Standard Card ── */
+.wt-card {
+  background: var(--wt-color-white);
+  border-radius: var(--wt-radius-xl);   /* 16px = 1pc in source */
+  box-shadow: var(--wt-shadow-card);
+  padding: 20px var(--wt-spacing-md);
+  transition: height 0.2s;
+}
+
+/* ── Card with Label Tab (like form-lead cards) ── */
+.wt-card--labeled {
+  background: var(--wt-color-white);
+  border-radius: var(--wt-radius-xl);
+  box-shadow: var(--wt-shadow-card);
+  padding: 20px var(--wt-spacing-md);
+}
+.wt-card--labeled .wt-card__label {
+  background: #000000;
+  border-radius: var(--wt-radius-xs) var(--wt-radius-xs) 0 0;
+  color: var(--wt-color-white);
+  padding: 4px 8px;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-body-s);
+}
+
+/* ── Offer Card (Catalog Card) ── */
+.wt-offer-card {
+  background: var(--wt-color-white);
+  border-radius: var(--wt-radius-xl);
+  box-shadow: var(--wt-shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--wt-transition-base);
+}
+
+/* Offer card label/tag (the colored strip) */
+.wt-offer-card__label {
+  background-color: #E7E7E7;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-body-s);
+  padding: var(--wt-spacing-sm) var(--wt-spacing-md);
+  text-align: center;
+}
+
+/* Offer card body */
+.wt-offer-card__body {
+  padding: var(--wt-spacing-lg) var(--wt-spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* ── Price Display ── */
+.wt-offer-card__price {
+  font-family: var(--wt-font-primary);
+  font-weight: var(--wt-font-weight-bold);
+  color: var(--wt-color-black);
+  text-align: center;
+  margin-bottom: var(--wt-spacing-md);
+}
+.wt-offer-card__price-amount {
+  font-size: var(--wt-font-size-headline-1);
+  line-height: 1;
+  font-weight: var(--wt-font-weight-extrabold);
+}
+.wt-offer-card__price-currency {
+  font-size: var(--wt-font-size-h4);
+  vertical-align: super;
+}
+.wt-offer-card__price-period {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-regular);
+  color: var(--wt-color-grey-dark);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Feature List (inside offer card) ── */
+.wt-offer-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--wt-spacing-lg);
+}
+.wt-offer-card__features li {
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-regular);
+  line-height: var(--wt-line-height-body-s);
+  color: var(--wt-color-black);
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wt-offer-card__features li strong {
+  font-weight: var(--wt-font-weight-bold);
+}
+.wt-offer-card__features li .wt-icon-check {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Offer Card CTA ── */
+.wt-offer-card__cta {
+  margin-top: auto;
+  padding-top: var(--wt-spacing-md);
+  text-align: center;
+}
+.wt-offer-card__cta .wt-button {
+  width: 100%;
+}
+
+/* ── Side Popup Card ── */
+.wt-card--side-popup {
+  background: var(--wt-color-white);
+  border-bottom-left-radius: var(--wt-radius-3xl);
+  border-top-left-radius: var(--wt-radius-3xl);
+  position: fixed;
+  transition: var(--wt-transition-base);
+  overflow: hidden;
+  z-index: 9999999999999;
+}
+.wt-card--side-popup.active {
+  border-radius: var(--wt-radius-3xl);
+  background: var(--wt-color-white);
+}
+
+/* ── Luce/Gas Bill Card (larger, energy offers) ── */
+.wt-card--lucegas {
+  background: var(--wt-color-white);
+  border-radius: var(--wt-radius-2xl);
+  box-shadow: var(--wt-shadow-card);
+  margin: 40px auto;
+  max-width: 813px;
+  padding: 24px var(--wt-spacing-xl);
+}
+
+/* ============================================================================
+   5. FORM CONTROLS
+   ============================================================================ */
+
+.wt-input {
+  border-bottom: 1px solid var(--wt-color-grey-dark);
+  color: var(--wt-color-black);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body);
+  font-weight: var(--wt-font-weight-regular);
+  padding: 6px var(--wt-spacing-md) 2px;
+  width: 100%;
+  transition: var(--wt-transition-fast);
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+.wt-input::placeholder {
+  color: var(--wt-color-grey-mid);
+}
+.wt-input:focus {
+  border-bottom-color: var(--wt-color-purple);
+  box-shadow: var(--wt-shadow-focus-purple-sm);
+}
+.wt-input.error {
+  border-bottom-color: var(--wt-color-red);
+}
+
+/* ── Search-style Input (pill shape with shadow) ── */
+.wt-input--search {
+  align-items: center;
+  background: var(--wt-color-white);
+  border: none;
+  border-radius: var(--wt-radius-xl);
+  box-shadow: var(--wt-shadow-search);
+  color: var(--wt-color-grey-placeholder);
+  display: flex;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body);
+  font-style: normal;
+  font-weight: var(--wt-font-weight-regular);
+  letter-spacing: 0.32px;
+  line-height: var(--wt-line-height-body);
+  height: 48px;    /* 3pc */
+  padding: 0 var(--wt-spacing-md);
+  width: 100%;
+}
+
+/* ── Form with card input styling ── */
+.wt-input--card {
+  border-radius: var(--wt-radius-xl);
+  box-shadow: var(--wt-shadow-card);
+  font-size: var(--wt-font-size-body);
+  height: 64px;   /* 4pc */
+  line-height: var(--wt-line-height-body);
+  margin-top: 36px;
+  max-width: -webkit-fill-available;
+  padding-left: var(--wt-spacing-md);
+  width: 100%;
+}
+
+/* ── Label ── */
+.wt-label {
+  color: var(--wt-color-grey-dark);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-xs);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-xs);
+  margin-bottom: 2px;
+}
+
+/* ── Radio Button ── */
+.wt-radio {
+  accent-color: var(--wt-color-purple);
+  border-radius: var(--wt-radius-sm);
+  border-color: var(--wt-color-purple);
+  height: 35px;
+  width: 17px;
+  flex: 1 1 5%;
+  max-width: 17px;
+  cursor: pointer;
+}
+
+/* ── Select Dropdown ── */
+.wt-select {
+  background-color: var(--wt-color-white);
+  border: 1px solid #aaa;
+  border-radius: var(--wt-radius-xs);
+  color: #444;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  line-height: 28px;
+  padding: 0 8px;
+  height: 28px;
+  cursor: pointer;
+}
+.wt-select:focus {
+  border: 1px solid var(--wt-color-purple);
+  outline: none;
+  box-shadow: var(--wt-shadow-focus-purple-sm);
+}
+
+/* ── Error Message ── */
+.wt-error {
+  color: var(--wt-color-red);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-xs);
+  font-weight: var(--wt-font-weight-semibold);
+  margin-top: 4px;
+}
+
+/* ── Floating Label ── */
+.wt-input--floating-label {
+  position: relative;
+}
+.wt-input--floating-label label {
+  color: var(--wt-color-grey-mid);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-xs);
+  font-weight: var(--wt-font-weight-semibold);
+  left: 0;
+  line-height: var(--wt-line-height-xs);
+  opacity: 0;
+  position: absolute;
+  top: 18px;
+  transition: var(--wt-transition-fast);
+  z-index: 1;
+}
+.wt-input--floating-label label.focus,
+.wt-input--floating-label input:focus + label {
+  opacity: 1;
+  top: -6px;
+}
+
+/* ── Toggle Switch ── */
+.wt-switch {
+  align-items: center;
+  display: flex;
+  font-weight: var(--wt-font-weight-bold);
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.wt-switch .wt-switch__label {
+  font-size: var(--wt-font-size-body);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: 22px;
+  margin-right: 12px;
+}
+.wt-switch input:checked + .wt-switch__slider {
+  background-color: var(--wt-color-purple);
+  border: 1px solid transparent;
+}
+.wt-switch input:checked + .wt-switch__slider::before {
+  left: -8px;
+}
+.wt-switch input:focus + .wt-switch__slider {
+  box-shadow: var(--wt-shadow-focus-purple-sm);
+}
+.wt-switch__slider {
+  background-color: var(--wt-color-grey-mid);
+  border: 1px solid var(--wt-color-grey-bg-alt);
+  border-radius: 50px;
+  bottom: 0;
+  height: 20px;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 36px;
+  position: relative;
+}
+.wt-switch__slider::before {
+  background-color: var(--wt-color-white);
+  border: 1px solid var(--wt-color-grey-bg-alt);
+  border-radius: 50%;
+  bottom: -1px;
+  box-shadow: var(--wt-shadow-card);
+  content: "";
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 20px;
+  transition: var(--wt-transition-base);
+}
+
+/* ── Filter Chip ── */
+.wt-filter-chip {
+  align-items: center;
+  background-color: var(--wt-color-grey-bg);
+  border-radius: var(--wt-radius-xs);
+  color: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  gap: 10px;
+  height: 32px;   /* 2pc */
+  padding: 6px 12px;
+  transition: var(--wt-transition-base);
+}
+.wt-filter-chip:hover {
+  background-color: var(--wt-color-purple-bg-active);
+}
+.wt-filter-chip.selected {
+  background-color: var(--wt-color-purple);
+  color: var(--wt-color-white);
+}
+.wt-filter-chip.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================================================
+   6. NAVIGATION
+   ============================================================================ */
+
+/* ── Header Bar ── */
+.wt-header {
+  background: var(--wt-color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: var(--wt-z-sticky);
+  width: 100%;
+}
+
+/* ── Header Logo ── */
+.wt-header__logo {
+  height: 28px;
+  width: auto;
+}
+
+/* ── Navigation Link ── */
+.wt-nav-link {
+  color: var(--wt-color-black);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-body-s);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: var(--wt-transition-base);
+}
+.wt-nav-link:hover {
+  color: var(--wt-color-purple);
+}
+.wt-nav-link.active {
+  color: var(--wt-color-purple);
+  border-bottom: 2px solid var(--wt-color-purple);
+}
+
+/* ── Tab Navigation (Offers pages: Mobile / Casa / Energia) ── */
+.wt-tabs {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 -32px 24px;
+  border-bottom: 1px solid var(--wt-color-grey-border);
+}
+.wt-tabs__item {
+  align-items: center;
+  border-bottom: 1px solid var(--wt-color-grey-border);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-regular);
+  height: 50px;
+  justify-content: center;
+  padding: 12px var(--wt-spacing-md) 14px;
+  white-space: nowrap;
+  width: 33.3%;
+  transition: var(--wt-transition-base);
+}
+.wt-tabs__item.active {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--wt-color-purple), var(--wt-color-purple) 99.78%) 1;
+  font-weight: var(--wt-font-weight-semibold);
+  color: var(--wt-color-purple);
+}
+.wt-tabs__item:hover {
+  color: var(--wt-color-purple);
+}
+
+/* Energy-specific tab colors */
+.wt-tabs__item.active[data-tab="gas"] {
+  border-image: linear-gradient(90deg, var(--wt-color-blue), var(--wt-color-blue) 99.78%) 1;
+}
+.wt-tabs__item.active[data-tab="luce"] {
+  border-image: linear-gradient(90deg, var(--wt-color-green), var(--wt-color-green) 99.78%) 1;
+}
+.wt-tabs__item.active[data-tab="luce-gas"] {
+  border-image: linear-gradient(90deg, var(--wt-color-green), var(--wt-color-blue) 99.78%) 1;
+}
+
+/* ── Filter/Category Selector Dropdown ── */
+.wt-filter-selector {
+  align-items: center;
+  border: 2px solid var(--wt-color-grey-light);
+  border-radius: var(--wt-radius-md);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  height: 32px;   /* 2pc */
+  justify-content: space-between;
+  padding-left: var(--wt-spacing-md);
+  padding-right: 12px;
+  transition: var(--wt-transition-base);
+}
+.wt-filter-selector:hover {
+  background-color: var(--wt-color-purple-bg);
+  border: 2px solid var(--wt-color-purple-border);
+}
+.wt-filter-selector.focused {
+  background-color: var(--wt-color-purple-bg-active);
+  border-color: var(--wt-color-purple);
+  color: var(--wt-color-purple);
+}
+
+/* ── Footer ── */
+.wt-footer {
+  background: var(--wt-color-darkblack);
+  color: var(--wt-color-white);
+  padding: var(--wt-spacing-3xl) 0;
+}
+.wt-footer a {
+  color: var(--wt-color-white);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  text-decoration: none;
+  transition: var(--wt-transition-base);
+}
+.wt-footer a:hover {
+  text-decoration: underline;
+  color: var(--wt-color-primary);
+}
+.wt-footer__section-title {
+  color: var(--wt-color-white);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  line-height: var(--wt-line-height-body-s);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: var(--wt-spacing-md);
+}
+
+/* ============================================================================
+   7. MODAL / OVERLAY
+   ============================================================================ */
+
+.wt-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--wt-z-overlay);
+}
+
+.wt-modal {
+  background: var(--wt-color-white);
+  border-radius: var(--wt-radius-3xl);
+  display: block;
+  margin: auto;
+  max-width: 650px;
+  opacity: 1;
+  padding-bottom: 30px;
+}
+
+/* ============================================================================
+   8. SPINNER / LOADING
+   ============================================================================ */
+
+.wt-spinner-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+.wt-spinner {
+  animation: wt-spin 0.7s linear infinite;
+  border-radius: 50%;
+  height: 34px;
+  left: 50%;
+  margin-left: -25px;
+  position: fixed;
+  top: 50%;
+  width: 34px;
+  z-index: 999999;
+}
+
+@-webkit-keyframes wt-spin {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes wt-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================================================
+   9. UTILITY / LAYOUT
+   ============================================================================ */
+
+/* ── Max-width Container ── */
+.wt-container {
+  margin: 0 auto;
+  max-width: 1366px;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .wt-container {
+    padding-left: var(--wt-spacing-md);
+    padding-right: var(--wt-spacing-md);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1239px) {
+  .wt-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .wt-container {
+    padding-left: var(--wt-spacing-xl);
+    padding-right: var(--wt-spacing-xl);
+  }
+}
+
+/* ── Section Spacing ── */
+.wt-section {
+  padding: 30px 0;
+}
+
+/* ── Divider ── */
+.wt-divider {
+  border: none;
+  border-bottom: 1px solid var(--wt-color-grey-border);
+  margin: var(--wt-spacing-lg) 0;
+}
+
+/* ── Drag-over indicator ── */
+.wt-drag-over {
+  background: var(--wt-color-purple-bg);
+  border: 2px dashed var(--wt-color-purple);
+}
+
+/* ============================================================================
+   10. RESPONSIVE BREAKPOINTS (matches WindTre AEM source)
+   ============================================================================ */
+
+/* Mobile: max-width 767px */
+/* Tablet: 768px–1239px */
+/* Desktop: 1240px+ */
+
+@media screen and (max-width: 767px) {
+  .wt-title-uber-1 {
+    font-size: 46px !important;
+    line-height: 56px !important;
+  }
+  .wt-title-uber-2 {
+    font-size: 40px !important;
+    line-height: 52px !important;
+  }
+  .wt-title-uber-3 {
+    font-size: 36px !important;
+    line-height: 44px !important;
+  }
+  .wt-h1 {
+    font-size: 25px !important;
+    line-height: 32px !important;
+  }
+  .wt-h2 {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+  .wt-h3 {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+  .wt-h4 {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+  .wt-h5 {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+
+  /* Mobile text overrides */
+  .wt-mobile-text-standard {
+    font-size: var(--wt-font-size-body) !important;
+    font-weight: var(--wt-font-weight-regular);
+    line-height: var(--wt-line-height-body) !important;
+  }
+  .wt-mobile-text-xs {
+    font-size: var(--wt-font-size-xs) !important;
+    font-weight: var(--wt-font-weight-regular) !important;
+    line-height: var(--wt-line-height-xs) !important;
+  }
+  .wt-mobile-text-s {
+    font-size: var(--wt-font-size-body-s) !important;
+    font-weight: var(--wt-font-weight-regular) !important;
+    line-height: var(--wt-line-height-body-s) !important;
+  }
+  .wt-mobile-text-note {
+    font-size: var(--wt-font-size-note) !important;
+    font-weight: var(--wt-font-weight-regular) !important;
+    line-height: var(--wt-line-height-note) !important;
+  }
+
+  /* Card adjustments on mobile */
+  .wt-card--lucegas {
+    margin: 40px 20px;
+    padding: var(--wt-spacing-md);
+  }
+
+  /* Tabs on mobile */
+  .wt-tabs {
+    margin: 0 -var(--wt-spacing-md) var(--wt-spacing-md);
+  }
+}
+
+/* ============================================================================
+   11. ANIMATIONS & TRANSITIONS
+   ============================================================================ */
+
+/* Standard entry animation */
+.wt-animate-fade-in {
+  animation: wt-fade-in 0.35s ease forwards;
+}
+@keyframes wt-fade-in {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Height transition (like form-lead card) */
+.wt-animate-height {
+  transition: height 0.2s;
+}
+
+/* Opacity with delay (like popup overlay) */
+.wt-animate-opacity {
+  transition: opacity 0.1s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+/* ============================================================================
+   12. OFFER CARD GRID LAYOUT
+   ============================================================================ */
+
+/* ── Offer Grid (for catalog pages) ── */
+.wt-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--wt-spacing-lg);
+  margin: var(--wt-spacing-lg) 0;
+}
+@media screen and (max-width: 767px) {
+  .wt-offer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--wt-spacing-md);
+  }
+}
+
+/* ── Filter Bar (above offers) ── */
+.wt-filter-bar {
+  align-items: center;
+  border: 2px solid var(--wt-color-grey-light);
+  border-radius: var(--wt-radius-md);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  height: 32px;
+  justify-content: center;
+  padding: 0 var(--wt-spacing-md);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  line-height: var(--wt-line-height-body-s);
+  letter-spacing: 0.02em;
+  text-align: center;
+  transition: var(--wt-transition-base);
+}
+.wt-filter-bar:hover {
+  background-color: var(--wt-color-purple-bg);
+  border: 2px solid var(--wt-color-purple-border);
+}
+
+/* Applied filter chip (solid purple) */
+.wt-filter-active {
+  align-items: center;
+  background-color: var(--wt-color-purple);
+  border-radius: var(--wt-radius-xs);
+  color: var(--wt-color-white);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-semibold);
+  gap: 8px;
+  height: 36px;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: var(--wt-line-height-body-s);
+  padding-left: 12px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+/* "Remove all" link */
+.wt-filter-remove-all {
+  color: var(--wt-color-purple);
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-body-s);
+  font-weight: var(--wt-font-weight-bold);
+  letter-spacing: 0.02em;
+  line-height: var(--wt-line-height-body-s);
+  text-align: center;
+  text-decoration: underline solid;
+  cursor: pointer;
+}
+.wt-filter-remove-all.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ============================================================================
+   13. SPECIFIC COMPONENT PATTERNS FROM OFFERS PAGES
+   ============================================================================ */
+
+/* ── Offer card with colored top (Mobile offers) ── */
+.wt-offer-card--mobile .wt-offer-card__top {
+  background: var(--wt-color-purple);
+  color: var(--wt-color-white);
+  padding: var(--wt-spacing-md);
+  text-align: center;
+  border-radius: var(--wt-radius-xl) var(--wt-radius-xl) 0 0;
+}
+
+/* ── Offer card with orange accent (Casa offers) ── */
+.wt-offer-card--casa .wt-offer-card__top {
+  background: var(--wt-color-primary);
+  color: var(--wt-color-white);
+  padding: var(--wt-spacing-md);
+  text-align: center;
+  border-radius: var(--wt-radius-xl) var(--wt-radius-xl) 0 0;
+}
+
+/* ── Offer card with green accent (Energia/Luce offers) ── */
+.wt-offer-card--energia .wt-offer-card__top {
+  background: var(--wt-color-green);
+  color: var(--wt-color-white);
+  padding: var(--wt-spacing-md);
+  text-align: center;
+  border-radius: var(--wt-radius-xl) var(--wt-radius-xl) 0 0;
+}
+
+/* ── "5G Full Speed" badge style (used across all offer types) ── */
+.wt-badge-5g {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--wt-font-primary);
+  font-size: var(--wt-font-size-xs);
+  font-weight: var(--wt-font-weight-bold);
+  color: var(--wt-color-black);
+  vertical-align: middle;
+}
+
+/* ── Green number (customer service) ── */
+.wt-green-number {
+  color: #518d54;
+  font-size: var(--wt-font-size-h3) !important;
+  font-weight: var(--wt-font-weight-bold) !important;
+  line-height: var(--wt-line-height-h4) !important;
+}
+@media screen and (max-width: 767px) {
+  .wt-green-number {
+    font-size: var(--wt-font-size-h6) !important;
+    line-height: var(--wt-line-height-body) !important;
+  }
+}
+
+/* ============================================================================
+   14. SELECT2-OVERRIDE (WindTre customizes select2 dropdowns)
+   ============================================================================ */
+
+/* When using select2 with WindTre theme */
+.wt-select2 .select2-container--default .select2-selection--single {
+  background-color: var(--wt-color-white);
+  border: 1px solid #aaa;
+  border-radius: var(--wt-radius-xs);
+}
+.wt-select2 .select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: var(--wt-color-purple);
+  box-shadow: var(--wt-shadow-focus-purple-sm);
+}
+
+/* ============================================================================
+   END — WindTre Brand Design System
+   ============================================================================ */

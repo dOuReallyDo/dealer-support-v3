@@ -1,65 +1,95 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useState } from "react";
+import type { Dealer } from "@/types";
+
+export default function DealerHome() {
+  const [dealer, setDealer] = useState<Dealer | null>(null);
+  const [email, setEmail] = useState("");
+  const [pdv, setPdv] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/dealer/me")
+      .then((r) => r.json())
+      .then((j) => {
+        if (j.dealer) {
+          setDealer(j.dealer);
+          window.location.replace("/configuratore");
+        }
+      })
+      .catch(() => null);
+  }, []);
+
+  async function register(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/dealer/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, pdv_code: pdv }),
+      });
+      const text = await res.text();
+      const json = text ? JSON.parse(text) : {};
+      if (!res.ok) return setError(json.error || `Errore ${res.status}`);
+      setDealer(json.dealer);
+      window.location.replace("/configuratore");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Errore di rete");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="dealer-login-wrap">
+      <div className="dealer-login-card">
+        <div className="login-logo">
+          <span className="login-logo-icon">🏪</span>
+          <h1>Dealer Support</h1>
+          <p className="login-subtitle">Configuratore offerte multi-operatore</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        <form onSubmit={register} className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              className="mx-input mx-input-lg"
+              type="email"
+              placeholder="nome@pdv.it"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div className="form-group">
+            <label htmlFor="pdv">Codice PDV</label>
+            <input
+              id="pdv"
+              className="mx-input mx-input-lg"
+              placeholder="Es. 001234"
+              value={pdv}
+              onChange={(e) => setPdv(e.target.value)}
+              required
+            />
+          </div>
+
+          {error && <div className="error-msg">{error}</div>}
+          {dealer && <div className="success-msg">Accesso verificato. Apertura configuratore…</div>}
+
+          <button className="btn btn-brand btn-block" disabled={loading}>
+            {loading ? "Verifica…" : "Accedi al configuratore"}
+          </button>
+        </form>
+
+        <div className="login-footer">
+          <a href="/admin/login" className="link-subtle">Area admin</a>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

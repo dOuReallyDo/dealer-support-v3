@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 98" width="200" height="98">
+  <!-- Iliad logo - red block with white text style -->
+  <rect width="200" height="98" rx="12" fill="#CC0000"/>
+  <text x="100" y="65" font-family="logo, Montserrat, Arial, sans-serif" font-weight="700" font-size="48" fill="#ffffff" text-anchor="middle">iliad</text>
+</svg>

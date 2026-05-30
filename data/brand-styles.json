@@ -1,0 +1,369 @@
+{
+  "_meta": {
+    "generated": "2026-05-30",
+    "source": "Live site CSS scraping + existing brand CSS files",
+    "note": "Colors, fonts, radius, shadows mapped from actual CSS custom properties"
+  },
+  "windtre": {
+    "brand": "WindTre",
+    "url": "https://www.windtre.it",
+    "colors": {
+      "primary": "#fc4a14",
+      "primary_dark": "#a62802",
+      "secondary": "#6207ab",
+      "secondary_dark": "#4f058b",
+      "secondary_bright": "#8e03ff",
+      "accent_blue": "#3db5e6",
+      "accent_green": "#6dcb99",
+      "accent_green_action": "#0dac2c",
+      "error_red": "#ad1010",
+      "black": "#1e1e1e",
+      "darkblack": "#101010",
+      "grey_dark": "#595959",
+      "grey_mid": "#9e9e9e",
+      "grey_light": "#c6c6c6",
+      "grey_bg": "#f4f4f4",
+      "white": "#ffffff"
+    },
+    "fonts": {
+      "primary": "Montserrat",
+      "secondary": "Nunito Sans",
+      "fallback": "sans-serif",
+      "weights": [300, 400, 600, 700, 800]
+    },
+    "borderRadius": {
+      "xs": "4px",
+      "sm": "5px",
+      "md": "8px",
+      "lg": "10px",
+      "xl": "16px",
+      "2xl": "24px",
+      "3xl": "28px",
+      "pill": "30px",
+      "pill_large": "75pt",
+      "circle": "50%"
+    },
+    "button": {
+      "borderRadius": "30px",
+      "borderWidth": "2px",
+      "paddingX": "24px",
+      "minWidth": "150px",
+      "fontWeight": 700,
+      "fontSize": "14px",
+      "textTransform": "uppercase",
+      "variants": ["default_black", "primary_orange", "primary_purple", "primary_green", "primary_black"]
+    },
+    "card": {
+      "borderRadius": "8px to 28px (varies by component)",
+      "shadow": "0 4px 8px 0 rgba(0,0,0,0.1), 2px 10px 32px 0 rgba(0,0,0,0.1)",
+      "padding": "16px to 32px"
+    },
+    "layout": {
+      "approach": "AEM-based component grid",
+      "maxWidth": "1200px approximate",
+      "spacing_unit": "8px base (4,8,16,24,32,40,48,60px)"
+    },
+    "shadows": {
+      "card": "0 4px 8px 0 rgba(0,0,0,0.1), 2px 10px 32px 0 rgba(0,0,0,0.1)",
+      "card_lg": "0 4px 20px rgba(0,0,0,0.15)",
+      "dropdown": "0 23px 49px 0 rgba(0,0,0,0.23)"
+    },
+    "cssFileMatch": {
+      "path": "/brands/windtre.css",
+      "verified": true,
+      "tokensMatch": "All custom properties in brand CSS match scraped values"
+    }
+  },
+  "tim": {
+    "brand": "TIM",
+    "url": "https://www.tim.it",
+    "colors": {
+      "primary": "#122ac2",
+      "primary_dark": "#081677",
+      "primary_deeper": "#001136",
+      "logo_blue": "#0033a1",
+      "light_blue": "#0088d9",
+      "lavender": "#d0d4f3",
+      "pale_blue": "#cce0fc",
+      "red": "#eb0028",
+      "red_dark": "#ea0026",
+      "red_light": "#ff5c82",
+      "green": "#82c85a",
+      "green_mint": "#00b677",
+      "green_teal": "#50e3c2",
+      "lime": "#dbf11e",
+      "black": "#000000",
+      "gray_900": "#1a1a1a",
+      "gray_800": "#333333",
+      "gray_500": "#727272",
+      "gray_300": "#cccccc",
+      "gray_100": "#efefef",
+      "white": "#ffffff"
+    },
+    "fonts": {
+      "primary": "TIMSans",
+      "fallback": "Roboto, sans-serif",
+      "weights": [300, 500, 900],
+      "source": "Self-hosted at risorsec.tim.it CDN"
+    },
+    "borderRadius": {
+      "none": "0",
+      "xs": "0.4rem",
+      "sm": "7px",
+      "md": "1.4rem",
+      "lg": "2rem",
+      "full": "50%",
+      "pill": "100%"
+    },
+    "button": {
+      "height": "4.8rem",
+      "borderRadius": "1.4rem",
+      "paddingX": "3.2rem",
+      "fontWeight": 600,
+      "fontSize": "1.6rem",
+      "textTransform": "uppercase",
+      "letterSpacing": "0.05rem",
+      "variants": ["primary_blue", "secondary_border", "special_lime", "special_red", "tertiary_ghost"]
+    },
+    "card": {
+      "borderRadius": "2rem (lg)",
+      "border": "1px solid #d0d4f3 (lavender)",
+      "padding": "2.4rem",
+      "background": "#ffffff",
+      "dark_variant": "linear-gradient(225deg, #08078a, #061ec5)"
+    },
+    "layout": {
+      "approach": "AEM component grid with 8px spacing unit (rem-based)",
+      "spacing_unit": "0.8rem base grid"
+    },
+    "shadows": {
+      "card": "none explicit (border-only)",
+      "overlay_dark": "rgba(0,0,0,0.4)",
+      "overlay_light": "rgba(0,0,0,0.2)"
+    },
+    "cssFileMatch": {
+      "path": "/brands/tim.css",
+      "verified": true,
+      "tokensMatch": "All custom properties in brand CSS match scraped values"
+    }
+  },
+  "vodafone": {
+    "brand": "Vodafone",
+    "url": "https://www.vodafone.it",
+    "colors": {
+      "primary": "#e60000",
+      "primary_dark": "#a10000",
+      "primary_light": "#ff3333",
+      "black": "#262626",
+      "dark_gray": "#4a4a4a",
+      "mid_gray": "#595959",
+      "gray": "#999999",
+      "light_gray": "#cccccc",
+      "pale_gray": "#f4f4f4",
+      "off_white": "#f5f5f5",
+      "white": "#ffffff",
+      "green": "#00a651",
+      "blue": "#007aff",
+      "yellow": "#ffd400"
+    },
+    "fonts": {
+      "primary": "Vodafone",
+      "secondary": "VodafoneIsRg (Instrument Sans)",
+      "fallback": "-apple-system, Segoe UI, Roboto, sans-serif",
+      "weights": [300, 400, 700, 800],
+      "source": "Self-hosted Next.js woff2"
+    },
+    "borderRadius": {
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "20px",
+      "full": "9999px"
+    },
+    "button": {
+      "borderRadius": "9999px (full/pill)",
+      "borderWidth": "2px",
+      "paddingY": "0.75rem",
+      "paddingX": "1.5rem",
+      "fontWeight": 400,
+      "fontSize": "1rem",
+      "variants": ["primary_red", "secondary_white", "ghost_outline", "dark_black"]
+    },
+    "card": {
+      "borderRadius": "20px (xl)",
+      "shadow_hover": "0 8px 24px rgba(0,0,0,0.12)",
+      "transform_hover": "translateY(-2px)",
+      "padding": "1.5rem 2rem"
+    },
+    "layout": {
+      "approach": "Next.js SSR, mobile-first responsive",
+      "breakpoints": ["480px", "767px", "1024px"],
+      "spacing_unit": "0.25rem base (4,8,16,24,32,48,64px)"
+    },
+    "shadows": {
+      "sm": "0 1px 3px rgba(0,0,0,0.1)",
+      "md": "0 4px 12px rgba(0,0,0,0.1)",
+      "lg": "0 8px 24px rgba(0,0,0,0.12)"
+    },
+    "cssFileMatch": {
+      "path": "/brands/vodafone.css",
+      "verified": true,
+      "tokensMatch": "All custom properties in brand CSS match scraped values"
+    }
+  },
+  "fastweb": {
+    "brand": "Fastweb",
+    "url": "https://www.fastweb.it",
+    "colors": {
+      "primary_red": "#CC0000",
+      "primary_red_dark": "#990000",
+      "primary_red_light": "#E00000",
+      "yellow_accent": "#FDC400",
+      "yellow_hover": "#F5B800",
+      "purple_accent": "#5b52cf",
+      "purple_dark": "#413a93",
+      "green_cta": "#41c50d",
+      "green_cta_hover": "#246c07",
+      "green_tertiary": "#7ed321",
+      "blue_cta": "#0072f0",
+      "blue_cta_hover": "#0057b5",
+      "black": "#000000",
+      "dark_gray": "#1A1A1A",
+      "mid_dark_gray": "#444444",
+      "mid_gray": "#595959",
+      "gray": "#6f6f6f",
+      "light_gray": "#C1C7CD",
+      "border_gray": "#C4C4C4",
+      "pale_gray": "#e1e1e1",
+      "off_white": "#f6f6f6",
+      "bg_gray": "#f3f3f3",
+      "gray_697": "#697077",
+      "white": "#ffffff"
+    },
+    "fonts": {
+      "primary": "Roboto Flex",
+      "fallback": "Arial, sans-serif",
+      "weights": "100-1000 (variable)",
+      "source": "Self-hosted woff2 at /adsl-fibra-ottica/fonts/"
+    },
+    "borderRadius": {
+      "sm": "4px",
+      "md": "5px",
+      "lg": "7px",
+      "xl": "8px",
+      "2xl": "10px",
+      "full": "500px (pill)",
+      "card": "20px",
+      "card_dark": "40px",
+      "basic_card": "40px"
+    },
+    "button": {
+      "borderRadius": "100px (pill)",
+      "padding": "12px 24px",
+      "fontWeight": 500,
+      "fontSize": "14px",
+      "textTransform": "uppercase",
+      "letterSpacing": "1px",
+      "minHeight": "44px",
+      "variants": ["cta_green", "cta_alternate_yellow", "cta_alternate_blue", "cta_alternate_purple", "cta_light", "cta_dark", "cta_outline", "whatsapp"]
+    },
+    "card": {
+      "borderRadius": "20px (standard) / 40px (dark/large)",
+      "border": "1px solid #c1c7cd",
+      "padding": "32px",
+      "highlighted_border": "1px solid #5b52cf + outline 3px solid #5b52cf"
+    },
+    "layout": {
+      "approach": "Flexbox grid with responsive columns (12-col desktop, gap-based)",
+      "maxWidth": "1920px",
+      "content_max": "clamp(24px, calc(24px + (100vw - 768px)*(96-24)/(1920-768)), 96px) padding",
+      "spacing": "8px base (8,16,24,32,40,48,56,64,72,80px)"
+    },
+    "shadows": {
+      "card": "none",
+      "md": "0 2px 8px rgba(0,0,0,0.08)"
+    },
+    "tags": {
+      "default": "background:#f4f3fc, color:#5b52cf, borderRadius:24px",
+      "primary": "background:#fdc400, color:#1a1a1a",
+      "bg_secondary": "background:#5b52cf, color:#fff"
+    },
+    "cssFileMatch": {
+      "path": "/brands/fastweb.css",
+      "verified": true,
+      "tokensMatch": "Brand CSS matches — note: live site now uses Roboto Flex instead of Montserrat as primary font. Fastweb recently redesigned font system."
+    }
+  },
+  "iliad": {
+    "brand": "iliad",
+    "url": "https://www.iliad.it",
+    "colors": {
+      "primary": "#CC0000",
+      "primary_dark": "#B30000",
+      "primary_hover": "#D62727",
+      "primary_active": "#B30000",
+      "black": "#000000",
+      "yellow": "#FFD400",
+      "dark_teal": "#013540",
+      "dark_gray": "#3C3A39",
+      "mid_dark_gray": "#3E3E3E",
+      "gray_500": "#6F6F6F",
+      "gray_400": "#A8A8A8",
+      "gray_300": "#C4C4C4",
+      "gray_200": "#E0E0E0",
+      "gray_100": "#F2F2F2",
+      "gray_50": "#F6F6F6",
+      "white": "#FFFFFF",
+      "success": "#37B500",
+      "info": "#0066CC",
+      "error": "#E80000"
+    },
+    "fonts": {
+      "primary": "'M', 'OS', 'Arial', sans-serif",
+      "bold": "'M-b', 'OS-b', 'Arial'",
+      "semibold": "'M-sb', 'OS-sb', 'Arial'",
+      "heading": "Montserrat",
+      "weights": [400, 600, 700],
+      "note": "iliad uses obfuscated font names 'M', 'OS' — likely Montserrat/Open Sans variants"
+    },
+    "borderRadius": {
+      "sm": "4px",
+      "md": "5px",
+      "lg": "7px",
+      "xl": "10px",
+      "2xl": "1.6rem",
+      "round": "500px",
+      "packshot": "45px"
+    },
+    "button": {
+      "borderRadius": "500px (pill)",
+      "borderWidth": "2px",
+      "padding": "0.8rem 1.6rem",
+      "fontWeight": 600,
+      "fontSize": "1.6rem",
+      "variants": ["red", "black", "white", "outline"]
+    },
+    "card": {
+      "borderRadius": "10px (standard) / 7px (mobile offer block)",
+      "border": "Decorative border with 25px radius corners (left-b, right-b patterns)",
+      "padding": "varies",
+      "dark_theme_mobile": "background #3E3E3E",
+      "light_theme_fiber": "background #FFFFFF"
+    },
+    "layout": {
+      "approach": "Mobile-first, dark background default (#000000 body bg)",
+      "maxWidth": "1280px desktop",
+      "spacing": "2rem base (≈32px)",
+      "minWidth": "300px"
+    },
+    "shadows": {
+      "sm": "none",
+      "md": "0 2px 8px rgba(0,0,0,0.06)"
+    },
+    "cssFileMatch": {
+      "path": "/brands/iliad.css",
+      "verified": true,
+      "tokensMatch": "All custom properties in brand CSS match scraped values"
+    }
+  }
+}

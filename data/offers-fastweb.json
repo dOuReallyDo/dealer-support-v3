@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "brand": "Fastweb",
+    "url": "https://www.fastweb.it",
+    "scraped": "2026-05-30",
+    "note": "Fastweb was the only site that returned full server-rendered offer data with prices. All offers extracted directly from HTML. Font changed from Montserrat to Roboto Flex variable."
+  },
+  "mobile": [
+    {
+      "nome": "Fastweb Mobile 150GB 5G",
+      "prezzo_mensile": "variabile da sito",
+      "dati": "150 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "300",
+      "roaming_UE": "32 GB (UE, UK, Svizzera)",
+      "spedizione": "inclusa",
+      "note": "Offerta base mobile 5G"
+    },
+    {
+      "nome": "Fastweb Mobile 250GB 5G",
+      "prezzo_mensile": "variabile da sito",
+      "dati": "250 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "500",
+      "roaming_UE": "43 GB (UE, UK, Svizzera)",
+      "spedizione": "inclusa",
+      "note": "Offerta intermedia 5G"
+    },
+    {
+      "nome": "Fastweb Mobile 400GB 5G",
+      "prezzo_mensile": "variabile da sito",
+      "dati": "400 GB (5G)",
+      "minuti": "illimitati",
+      "sms": "incluso",
+      "roaming_UE": "incluso",
+      "spedizione": "inclusa",
+      "note": "Offerta grande 5G"
+    },
+    {
+      "nome": "Fastweb Mobile Unlimited 5G",
+      "prezzo_mensile": "variabile da sito",
+      "dati": "Illimitati (5G)",
+      "minuti": "illimitati",
+      "sms": "1000",
+      "roaming_UE": "GB illimitati (UE, UK, Svizzera)",
+      "spedizione": "inclusa",
+      "note": "Offerta top 5G illimitata con unlimited roaming"
+    }
+  ],
+  "fisso": [
+    {
+      "nome": "Fastweb Casa Fibra (base)",
+      "prezzo_mensile": "26,95€",
+      "prezzo_pieno": "31,95€",
+      "sconto": "5€/mese",
+      "velocita_download": "1 Gbps (FTTH)",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "Modem Seven WiFi 7 incluso",
+      "bollino_agcom": "fibra",
+      "inclusi": ["Assistenza Casa Quixa", "attivazione inclusa"],
+      "note": "Prezzo promozionale — bollino Agcom fibra"
+    },
+    {
+      "nome": "Fastweb Casa Fibra Plus",
+      "prezzo_mensile": "34,95€",
+      "prezzo_pieno": "39,95€",
+      "sconto": "5€/mese",
+      "velocita_download": "1 Gbps (FTTH)",
+      "velocita_upload": "300 Mbps",
+      "chiamate": "illimitate",
+      "modem": "Modem Seven WiFi 7 + fino a 2 Booster Seven",
+      "bollino_agcom": "fibra",
+      "inclusi": ["Quixa Assistenza Casa", "Assistenza Plus", "Fastweb Club", "Fastweb Protect"],
+      "note": "Prezzo promozionale — pacchetto completo"
+    },
+    {
+      "nome": "Fastweb NeXXt One (solo internet)",
+      "prezzo_mensile": "variabile da sito",
+      "velocita_download": "1 Gbps",
+      "velocita_upload": "300 Mbps",
+      "modem": "Modem NeXXt One WiFi 6 incluso",
+      "inclusi": ["antenna inclusa"],
+      "note": "Internet illimitato senza voce"
+    }
+  ],
+  "energia": {
+    "disponibile": true,
+    "note": "Dati estratti direttamente dal sito Fastweb Energia (/energia/)",
+    "luce": [
+      {
+        "nome": "Fastweb Luce Flat Start",
+        "tipo": "flat (fisso bloccato)",
+        "prezzo_mensile": "41€",
+        "consumo_annuo_max": "800 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato per 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Light",
+        "tipo": "flat (fisso bloccato)",
+        "prezzo_mensile": "56€",
+        "consumo_annuo_max": "1500 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato per 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Pro",
+        "tipo": "flat (fisso bloccato)",
+        "prezzo_mensile": "76€",
+        "consumo_annuo_max": "2500 kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato per 36 mesi"
+      },
+      {
+        "nome": "Fastweb Luce Flat Maxi",
+        "tipo": "flat (fisso bloccato)",
+        "prezzo_mensile": "91€",
+        "consumo_annuo_max": "4000+ kWh/anno",
+        "durata_blocco": "36 mesi",
+        "note": "Canone bloccato per 36 mesi"
+      }
+    ],
+    "gas": [],
+    "tipologia_mercato": ["Prezzo variabile per seguire l'andamento del mercato", "Prezzo fisso bloccato per 12/36 mesi"]
+  },
+  "convergenza": [
+    {
+      "nome": "Fastweb Casa + Mobile + Energia",
+      "descrizione": "Internet + Luce Flat + Mobile",
+      "sconto": "-312€ annuali",
+      "prezzo_indicativo": "variabile per configurazione",
+      "note": "Superconvergenza — dati + energia + mobile. Sconto -312€/anno + giga illimitati mobile"
+    },
+    {
+      "nome": "Fastweb Casa + Energia",
+      "descrizione": "Internet + Luce Flat",
+      "note": "Combo fibra + energia luce flat"
+    },
+    {
+      "nome": "Fastweb Mobile + Energia",
+      "descrizione": "Mobile + Luce Flat",
+      "sconto_luce": "30€/mese (da 41€)",
+      "note": "Combo mobile + energia con sconto luce"
+    }
+  ],
+  "assicurazioni": {
+    "disponibile": true,
+    "partner": "Quixa",
+    "prodotti": ["Assistenza Casa", "Assistenza Plus"],
+    "note": "Incluse nelle offerte Casa Plus; disponibili come add-on"
+  },
+  "smartphone_financing": {
+    "disponibile": true,
+    "note": "Cellulari a rate tramite Fastweb — iPhone 17 Pro, Samsung Galaxy S26, ecc. (banner presenti sul sito)"
+  },
+  "business": {
+    "disponibile": true,
+    "prezzo_partenza": "da 65€/mese",
+    "note": "Offerte Fastweb per Aziende"
+  }
+}
