@@ -101,13 +101,15 @@ export default function ConfiguratorePage() {
       </main>
 
       {/* Right sidebar — cart */}
-      <CartSidebar
-        items={cart}
-        discountLines={discountLines()}
-        total={total()}
-        operatorId={selectedOperator}
-        onReset={clearCart}
-      />
+      <div className="cart-sidebar-wrap">
+        <CartSidebar
+          items={cart}
+          discountLines={discountLines()}
+          total={total()}
+          operatorId={selectedOperator}
+          onReset={clearCart}
+        />
+      </div>
 
       {/* Comparison modal */}
       {comparisonIds.length >= 2 && <ComparisonModal />}
